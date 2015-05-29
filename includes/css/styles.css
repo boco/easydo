@@ -1,0 +1,140 @@
+
+/* --------------------------------------
+   Layout
+   -------------------------------------- */
+
+.img-center {
+	text-align: center;
+}  
+   
+footer {
+	background: #333;
+	color: #eee;
+	font-size: 12px;
+	padding: 20px;
+}   
+   
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
+
+body {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	background-image: url("../../images/retina_wood2.png");
+	background-repeat: repeat;
+}   
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+
+.navbar {
+	font-weight: bold;
+}
+   
+.navbar-brand {
+   padding: 0px 15px;
+   margin-top: -5px;
+   margin-bottom: -5px;
+}
+   
+/* --------------------------------------
+   Carousel
+   -------------------------------------- */
+
+#myCarousel {
+	margin-top: 60px;
+}   
+
+.carousel-caption {
+	font-size: 24px;
+}
+
+.carousel-caption h4 {
+	font-size: 32px;
+}
+   
+#myCarousel .item {
+	height: 400px;
+}
+
+#slide1 {
+	background: url("../../images/carousel_medium_01.jpg") top center no-repeat;
+}
+
+#slide2 {
+	background: url("../../images/carousel_medium_02.jpg") top center no-repeat;
+}
+
+#slide3 {
+	background: url("../../images/carousel_medium_03.jpg") top center no-repeat;
+}
+
+/* --------------------------------------
+   Global Styles
+   -------------------------------------- */
+
+.well.what {
+	margin: 20px 0;
+}
+
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {	
+	
+	.carousel-caption {
+		font-size: 16px;
+	}
+
+	.carousel-caption h4 {
+		font-size: 22px;
+	}
+	
+	#myCarousel .item {
+		height: 310px;
+	}
+		
+	#slide1 {
+		background: url("../../images/carousel_small_01.jpg") top center no-repeat;
+	}
+
+	#slide2 {
+		background: url("../../images/carousel_small_02.jpg") top center no-repeat;
+	}
+
+	#slide3 {
+		background: url("../../images/carousel_small_03.jpg") top center no-repeat;
+	}
+	
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+	#myCarousel .item {
+		height: 500px;
+	}	
+		
+	#slide1 {
+		background: url("../../images/carousel_large_01.jpg") top center no-repeat;
+	}
+
+	#slide2 {
+		background: url("../../images/carousel_large_02.jpg") top center no-repeat;
+	}
+
+	#slide3 {
+		background: url("../../images/carousel_large_03.jpg") top center no-repeat;
+	}	
+	
+}

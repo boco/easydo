@@ -1,0 +1,6 @@
+git clone ssh://5568be9250044657a30000bc@easydo-boco.rhcloud.com/~/git/easydo.git/
+cd easydo/
+
+git add .
+git commit -m 'My changes'
+git push
