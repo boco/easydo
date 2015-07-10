@@ -12,7 +12,26 @@ footer {
 	color: #eee;
 	font-size: 12px;
 	padding: 20px;
-}   
+}
+
+/* Sticky footer*/
+/* html {
+  position: relative;
+  min-height: 100%;
+} */
+
+/* Margin bottom by footer height */
+/* body {
+  margin-bottom: 145px;
+} */
+
+/* Set the fixed height of the footer here */
+/* .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 145px;
+} */
    
 /* --------------------------------------
    Typography
@@ -34,13 +53,13 @@ body {
 }
    
 .navbar-brand {
-	padding: 0px 15px;
+	padding: 0px 15px 0px 15px;
 	margin-top: -5px;
 	margin-bottom: -5px;
 }
 
 .login {
-	margin-top: 5px;
+	margin-top: 7px;
 }
    
 /* --------------------------------------
@@ -60,21 +79,39 @@ body {
 }
    
 #myCarousel .item {
-	height: 400px;
+	height: 413px;
 }
 
 #slide1 {
-	background: url("../../images/carousel_medium_01.jpg") top center no-repeat;
+	background: url("/images/carousel_medium_01.jpg") top center no-repeat;
 }
 
 #slide2 {
-	background: url("../../images/carousel_medium_02.jpg") top center no-repeat;
+	background: url("/images/carousel_medium_02.jpg") top center no-repeat;
 }
 
 #slide3 {
-	background: url("../../images/carousel_medium_03.jpg") top center no-repeat;
+	background: url("/images/carousel_medium_03.jpg") top center no-repeat;
 }
 
+/* --------------------------------------
+   About Us
+   -------------------------------------- */
+   
+.about {
+	margin-top: 60px;
+}  
+
+/* --------------------------------------
+   Contact
+   -------------------------------------- */
+
+.form-area {
+	padding: 10px 40px 60px;
+	margin: 10px 0px 60px;
+	border: 1px solid GRAY;
+}   
+   
 /* --------------------------------------
    Global Styles
    -------------------------------------- */
@@ -87,58 +124,59 @@ body {
    Media Queries
    -------------------------------------- */
 
-/* Portrait & landscape phone */
-@media (max-width: 480px) {
 
-
-}
-
+/* Small devices (tablets, 768px and up) */
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {	
 	
 	.carousel-caption {
-		font-size: 16px;
+		font-size: 14px;
 	}
 
 	.carousel-caption h4 {
-		font-size: 22px;
+		font-size: 20px;
 	}
 	
 	#myCarousel .item {
-		height: 310px;
+		height: 325px;
 	}
 		
 	#slide1 {
-		background: url("../../images/carousel_small_01.jpg") top center no-repeat;
+		background: url("/images/carousel_small_01.jpg") top center no-repeat;
 	}
 
 	#slide2 {
-		background: url("../../images/carousel_small_02.jpg") top center no-repeat;
+		background: url("/images/carousel_small_02.jpg") top center no-repeat;
 	}
 
 	#slide3 {
-		background: url("../../images/carousel_small_03.jpg") top center no-repeat;
+		background: url("/images/carousel_small_03.jpg") top center no-repeat;
 	}
 	
 }
 
+@media (min-width: 992px) {	
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
 /* Large desktop */
 @media (min-width: 1200px) {
 
 	#myCarousel .item {
-		height: 500px;
+		height: 502px;
 	}	
 		
 	#slide1 {
-		background: url("../../images/carousel_large_01.jpg") top center no-repeat;
+		background: url("/images/carousel_large_01.jpg") top center no-repeat;
 	}
 
 	#slide2 {
-		background: url("../../images/carousel_large_02.jpg") top center no-repeat;
+		background: url("/images/carousel_large_02.jpg") top center no-repeat;
 	}
 
 	#slide3 {
-		background: url("../../images/carousel_large_03.jpg") top center no-repeat;
+		background: url("/images/carousel_large_03.jpg") top center no-repeat;
 	}	
 	
 }
