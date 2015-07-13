@@ -8,8 +8,6 @@ class Contact_offline extends CI_Controller {
 	 
 	public function index()
 	{
-		$this->load->view('header_offline');
 		$this->load->view('contact_offline');
-		$this->load->view('footer_offline');
 	}
 }

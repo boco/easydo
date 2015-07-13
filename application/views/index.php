@@ -22,7 +22,6 @@
 
 	<body>
 		
-
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="container">
 				
@@ -197,7 +196,6 @@
 				<div class="col-sm-2">
 					<h6>Navigation</h6>
 					<ul class="list-unstyled">
-						<!-- če si logiran te preusmeri na drugi domač naslov ali pa bom dal nov footer -->
 						<li><?php echo anchor('index', 'Home'); ?></li>
 						<li><?php echo anchor('about_us_offline', 'About us'); ?></li>
 						<li><?php echo anchor('contact_offline', 'Contact'); ?></li>
