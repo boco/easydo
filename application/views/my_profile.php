@@ -1,223 +1,235 @@
 <html>
 
-	<head>
-		<!-- Website Title & Description for Search Engine purposes -->
-		<title>EasyDo</title>
-		<link href="/images/favicon2.ico" rel="icon" type="image/x-icon" />
-		
-		<!-- Mobile viewport optimized -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		
-		<!-- Bootstrap CSS -->
-		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="/includes/css/bootstrap-glyphicons.css" rel="stylesheet">
-		
-		<!-- Custom CSS -->
-		<link href="/includes/css/styles.css" rel="stylesheet">
-		
-		<!-- Include Modernizr in the head, before any other Javascript -->
-		<script src="/includes/js/modernizr-2.6.2.min.js"></script>		
-	</head>
+<?php include 'header.php'; ?>
+<body>
+	<?php include 'navbar_online.php'; ?>
 
-	<body>
-		
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				
-				<div class="navbar-header">
-					<!-- Meni za male ekrane (3 ertice)-->
-					<button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					
-					<!-- Logo - drugaačna preusmeritev če si online ali ne-->
-					<a class="navbar-brand" href="/"><img src="/images/logo.png" height="60" width="90" alt="Your logo"></a>
+	<div class="container " id="wrap">
+		<div class="row about" >
+
+			<div class="col-md-12">
+				<div class="jumbotron">
+				<div class="container">
+					<div class="row">
+
+							<h1>Status record</h1>
+							<p>How are you doing.</p>
+
+					</div>
+					<div class="row">
+						<div class="col-sm-3">
+							<h1>					
+								<span class=" label label-success boxicon">
+									<span class="glyphicon glyphicon-ok">
+									</span>
+								</span>
+								&nbsp;7
+							</h1>
+							<h3>Completed</h3>
+						</div>
+
+						<div class="col-sm-3">
+							<h1>					
+								<span class=" label label-danger boxicon">
+									<span class="glyphicon glyphicon-remove">
+									</span>
+								</span>
+								&nbsp;21
+							</h1>
+							<h3>Uncompleted</h3>
+						</div>
+
+						<div class="col-sm-3">
+							<h1>					
+								<span class=" label label-warning boxicon">
+									<span class="glyphicon glyphicon-play">
+									</span>
+								</span>
+								&nbsp;4
+							</h1>
+							<h3>In progress</h3>
+						</div>
+						<div class="col-sm-3">
+							<h1>					
+								<span class=" label label-default boxicon">
+									<span class="glyphicon glyphicon-repeat">
+									</span>
+								</span><b>
+								&nbsp;4</b>
+							</h1>
+							<h3>Total</h3>
+						</div>
+					</div>
 				</div>
-				
-				<div class="navbar-collapse collapse navbar-responsive-collapse">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<?php echo anchor('main', 'Home'); ?>
-						</li>
+		</div>
 
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">My EasyDo <strong class="caret"></strong></a>
+			</div>
 
-							<ul class="dropdown-menu">
-								<li>
-									<?php echo anchor('my_profile', 'My Profile'); ?>
-								</li>
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="well what">
+							<h3>
+								<div class="pull-right">
+									<div class="btn-group">
+										<button type="button" class="btn-xs btn-default" aria-label="Edit">
+											<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;Edit
+										</button>
+									</div>
+								</div>
+								My profile
+							</h3>
 
-								<li>
-									<?php echo anchor('overview', 'Overview'); ?>
-								</li>
-
-								<li>
-									<a href="#" data-toggle="modal" data-target="#addTaskModal">Add DoTask</a>
-								</li>
-
-								<li>
-									<?php echo anchor('activity_chart', 'Activity Chart'); ?>
-								</li>
-							</ul>
-						</li>
-						
-						<li>
-							<!--<a href="#">About us</a>-->
-							<?php echo anchor('about_us_online', 'About us'); ?>
-						</li>
-						
-						<li>
-							<!--<a href="#">Contact</a>-->
-							<?php echo anchor('contact_online', 'Contact'); ?>
-						</li>
-
-					</ul>
-
-					<form class="navbar-form navbar-left">
-	          			<div class="form-group">
-		                    <div class="input-group">
-		                    	<label for="search" class="sr-only">Search</label>
-		                        <input type="text" id="search" class="form-control" placeholder="Search" />
-		                        <span class="input-group-addon green"><span class="glyphicon glyphicon-search"></span></span>
-		                    </div>
-		                </div>
-	                </form>
-
-					<div class="nav navbar-nav navbar-right login hidden-xs">
-						<!--<a class="btn btn-success" href="#">Sign up</a>
-						<a class="btn btn-primary" href="#">Login</a>-->
-						<?php echo anchor('main/logout', 'Logout', 'class="btn btn-danger"'); ?>
+							<form role="form">
+								<dl>
+									<dt>
+										Email address
+									</dt>
+									<dd>
+										dummy@email.com
+									</dd>
+									<dt>
+										Username
+									</dt>
+									<dd>
+										Dumbster999
+									</dd>
+								</dl>
+							</form>
+						</div>
+				</div>
+				<div class="col-md-6">
+					<div class="well what">
+						<h3>
+							<div class="pull-right">
+								<div class="btn-group">
+									<button type="button" class="btn-xs btn-default" aria-label="Edit">
+										<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;Edit
+									</button>
+								</div>
+							</div>
+						Settings</h3>
+						<form role="form">
+							<dl>
+								<dt>
+									Displayed daily tasks
+								</dt>
+								<dd>
+									5
+								</dd>
+								<dt>
+									Send email notifications
+								</dt>
+								<dd>
+									NO
+								</dd>
+							</dl>
+						</form>
 					</div>
-					
-					<!-- Vidno samo na majhnih napravah < 768px -->
-					<div class="well well-small visible-xs">
-						<!--<a class="btn btn-success btn-block" href="#">Sign up</a>
-						<a class="btn btn-primary btn-block" href="#">Login</a>-->
-						<?php echo anchor('main/logout', 'Logout', 'class="btn btn-danger btn-block"'); ?>
-					</div>
-
 				</div>
 			</div>
-		</nav>
 
-		<!-- Modal -->
-		<div id="addTaskModal" class="modal fade" role="dialog">
-			<div class="modal-dialog">
-
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h3 class="modal-title text-center">Add new DoTask</h3>
-					</div>
-					<div class="modal-body">
-						<form class="form-horizontal">
-							<div class="form-group">
-								<label class="col-lg-2 col-lg-offset-1 control-label" for="taskName">Task name</label>
-								<div class="col-lg-8">
-									<input class="form-control" id="taskName" placeholder="Task name" type="text">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="well what">
+						<h3>
+							<div class="pull-right">
+								<div class="btn-group">
+									<button type="button" class="btn-xs btn-success" aria-label="Save">
+										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;Save
+									</button>
+								</div>
+								<div class="btn-group">
+									<button type="button" class="btn-xs btn-danger" aria-label="Cancel">
+										<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;Cancel
+									</button>
 								</div>
 							</div>
-							
-							<div class="form-group">
-								<label class="col-lg-2 col-lg-offset-1 control-label" for="taskDescription">Description</label>
-								<div class="col-lg-8">
-									<textarea class="form-control" id="taskDescription" placeholder="Description" rows="4"></textarea>
-								</div>
-							</div>
+						My profile</h3>
 
-							<div class="form-group">
-								<label class="col-lg-2 col-lg-offset-1 control-label" for="taskCategory">Category</label>
-								<div class="col-lg-8">
-									<input list="category" class="form-control" id="taskCategory" placeholder="Category" type="text">
-									<datalist id="category">
-										<option value="Home">
-										<option value="Book">
-										<option value="Movie">
-										<option value="Music">
-										<option value="Person">
-										<option value="Food">
-										<option value="Idea">
-										<option value="Shopping">
-										<option value="School">
-										<option value="Job">
-										<option value="Other">
-									</datalist>
-								</div>
-							</div>
 
+						<form role="form">
 							<div class="form-group">
-								<label class="col-lg-2 col-lg-offset-1 control-label" for="taskDeadline">Deadline</label>
-								<div class="col-lg-8">
-									<input class="form-control" id="taskDeadline" placeholder="Deadline" type="text">
-								</div>
+								<label for="userEmail">
+									Email address
+								</label>
+								<input type="email" class="form-control" id="userEmail" value="dummy@email.com"/> 
 							</div>
-
 							<div class="form-group">
-								<label class="col-lg-2 col-lg-offset-1 control-label" for="taskPriority">Priority</label>
-								<div class="col-lg-8">
-									<input class="form-control" id="taskPriority" placeholder="Priority" type="text"><br/>
-									<button class="btn btn-success pull-right" type="submit">Confirm</button>
-								</div>
+
+								<label for="userUsername">
+									Username
+								</label>
+								<input type="input" class="form-control" id="userUsername"  value="Dumbster999"/>
+							</div>
+							<div class="form-group">
+
+								<label for="userPassword">
+									Password (leave empty if unchanged)
+								</label>
+								<input type="password" class="form-control" id="userPassword" />
+							</div>
+							<div class="form-group">
+
+								<label for="userPasswordRepeat">
+									Password repeat
+								</label>
+								<input type="password" class="form-control" id="userPasswordRepeat" />
 							</div>
 						</form>
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+				<div class="col-md-6">
+					<div class="well what">
+						<h3>
+							<div class="pull-right">
+								<div class="btn-group">
+									<button type="button" class="btn-xs btn-success" aria-label="Save">
+										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;Save
+									</button>
+								</div>
+								<div class="btn-group">
+									<button type="button" class="btn-xs btn-danger" aria-label="Cancel">
+										<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;Cancel
+									</button>
+								</div>
+							</div>
+						Settings</h3>
+
+
+						<form role="form">
+							<div class="form-group">
+								<label for="userEmail">
+									Displayed daily tasks
+								</label>
+								<input type="number" class="form-control" id="userEmail" value="4"/> 
+							</div>
+							<div class="form-group">
+
+								<label>
+									Send email notifications
+								</label>
+								<div class="btn-toggle">
+									<div class="btn-group">
+									    <button class="btn btn-sm btn-default">YES</button>
+									    <button class="btn btn-sm btn-primary active">NO&nbsp;</button>
+								</div>
+								</div>
+							</div>
+
+						</form>
+					</div>
+
 					</div>
 				</div>
-
 			</div>
 		</div>
+	</div>
+</div>
 
-		<div class="container" id="main">
-			
+</body>
 
-		</div>
+<?php include 'footer_online.php'; ?>
+<?php include 'includeJs.php'; ?>
 
-	</body>
-
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-2">
-					<h6>Copyright &copy; 2015</h6>
-				</div>
-				
-				<div class="col-sm-4">
-					<h6>About Us</h6>
-					<p>Narwhal bespoke Odd Future tofu post-ironic selvage. Church-key gentrify four loko biodiesel squid, tofu cornhole beard you probably haven't heard of them wolf ugh flannel paleo banjo.</p>
-				</div>
-				
-				<div class="col-sm-2">
-					<h6>Navigation</h6>
-					<ul class="list-unstyled">
-						<li><?php echo anchor('main', 'Home'); ?></li>
-						<li><?php echo anchor('about_us_online', 'About us'); ?></li>
-						<li><?php echo anchor('contact_online', 'Contact'); ?></li>
-					</ul>
-				</div>
-									
-			</div>
-		</div>
-	</footer>
-	
-
-	<!-- All Javascript at the bottom of the page for faster page loading -->
-		
-	<!-- First try for the online version of jQuery-->
-	<script src="http://code.jquery.com/jquery.js"></script>
-	
-	<!-- If no online access, fallback to our hardcoded version of jQuery -->
-	<script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
-	
-	<!-- Bootstrap JS -->
-	<script src="/bootstrap/js/bootstrap.min.js"></script>
-	
-	<!-- Custom JS -->
-	<script src="/includes/js/script.js"></script>
-
-</html>
+</html>glyphicon glyphicon-edit
