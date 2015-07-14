@@ -88,15 +88,15 @@ body {
 }
 
 #slide1 {
-	background: url("/images/carousel_medium_01.jpg") top center no-repeat;
+	background: url("../../images/carousel_medium_01.jpg") top center no-repeat;
 }
 
 #slide2 {
-	background: url("/images/carousel_medium_02.jpg") top center no-repeat;
+	background: url("../../images/carousel_medium_02.jpg") top center no-repeat;
 }
 
 #slide3 {
-	background: url("/images/carousel_medium_03.jpg") top center no-repeat;
+	background: url("../../images/carousel_medium_03.jpg") top center no-repeat;
 }
 
 /* --------------------------------------
@@ -301,15 +301,15 @@ button, input, optgroup, select, textarea {
 	}
 		
 	#slide1 {
-		background: url("/images/carousel_small_01.jpg") top center no-repeat;
+		background: url("../../images/carousel_small_01.jpg") top center no-repeat;
 	}
 
 	#slide2 {
-		background: url("/images/carousel_small_02.jpg") top center no-repeat;
+		background: url("../../images/carousel_small_02.jpg") top center no-repeat;
 	}
 
 	#slide3 {
-		background: url("/images/carousel_small_03.jpg") top center no-repeat;
+		background: url("../../images/carousel_small_03.jpg") top center no-repeat;
 	}
 	
 	
@@ -329,15 +329,15 @@ button, input, optgroup, select, textarea {
 	}	
 		
 	#slide1 {
-		background: url("/images/carousel_large_01.jpg") top center no-repeat;
+		background: url("../../images/carousel_large_01.jpg") top center no-repeat;
 	}
 
 	#slide2 {
-		background: url("/images/carousel_large_02.jpg") top center no-repeat;
+		background: url("../../images/carousel_large_02.jpg") top center no-repeat;
 	}
 
 	#slide3 {
-		background: url("/images/carousel_large_03.jpg") top center no-repeat;
+		background: url("../../images/carousel_large_03.jpg") top center no-repeat;
 	}	
 	
 	#footer {
