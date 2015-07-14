@@ -1,25 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Sign_up extends CI_Controller {
+class Verify_sign_up extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
 		$this->load->model('users');
     }
 
-	public function index() {
-		$this->load->view('sign_up');
-	}
-
-	public function verifySignUp (){
+	public function index() {	
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('name', 'Name', 'trim|htmlspecialchars|stripslashes|callback_check_name');
 		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|callback_check_email|callback_check_email_available');
 		$this->form_validation->set_rules('password', 'Password', 'trim|htmlspecialchars|stripslashes|callback_check_password');
 		$this->form_validation->set_rules('repassword', 'Re-Password', 'trim|htmlspecialchars|stripslashes|callback_check_repassword');
-		$name=$this->input->post('name');
-		echo $name;
 		if ($this->form_validation->run() == TRUE){
 			$name=$this->input->post('name');
 			$email=$this->input->post('email');

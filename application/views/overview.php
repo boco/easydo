@@ -20,167 +20,290 @@
 	</head>
 
 	<body>
+		<div id="wrap">
 		
-		<nav class="navbar navbar-default navbar-fixed-top">
-			<div class="container">
-				
-				<div class="navbar-header">
-					<!-- Meni za male ekrane (3 ertice)-->
-					<button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
 					
-					<!-- Logo - drugaačna preusmeritev če si online ali ne-->
-					<a class="navbar-brand" href="/"><img src="/images/logo.png" height="60" width="90" alt="Your logo"></a>
-				</div>
-				
-				<div class="navbar-collapse collapse navbar-responsive-collapse">
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<?php echo anchor('main', 'Home'); ?>
-						</li>
-
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">My EasyDo <strong class="caret"></strong></a>
-
-							<ul class="dropdown-menu">
-								<li>
-									<?php echo anchor('my_profile', 'My Profile'); ?>
-								</li>
-
-								<li>
-									<?php echo anchor('overview', 'Overview'); ?>
-								</li>
-
-								<li>
-									<a href="#" data-toggle="modal" data-target="#addTaskModal">Add DoTask</a>
-								</li>
-
-								<li>
-									<?php echo anchor('activity_chart', 'Activity Chart'); ?>
-								</li>
-							</ul>
-						</li>
+					<div class="navbar-header">
+						<!-- Meni za male ekrane (3 ertice)-->
+						<button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
 						
-						<li>
-							<!--<a href="#">About us</a>-->
-							<?php echo anchor('about_us_online', 'About us'); ?>
-						</li>
-						
-						<li>
-							<!--<a href="#">Contact</a>-->
-							<?php echo anchor('contact_online', 'Contact'); ?>
-						</li>
-
-					</ul>
-
-					<form class="navbar-form navbar-left">
-	          			<div class="form-group">
-		                    <div class="input-group">
-		                    	<label for="search" class="sr-only">Search</label>
-		                        <input type="text" id="search" class="form-control" placeholder="Search" />
-		                        <span class="input-group-addon green"><span class="glyphicon glyphicon-search"></span></span>
-		                    </div>
-		                </div>
-	                </form>
-
-					<div class="nav navbar-nav navbar-right login hidden-xs">
-						<!--<a class="btn btn-success" href="#">Sign up</a>
-						<a class="btn btn-primary" href="#">Login</a>-->
-						<?php echo anchor('main/logout', 'Logout', 'class="btn btn-danger"'); ?>
+						<!-- Logo - drugaačna preusmeritev če si online ali ne-->
+						<a class="navbar-brand" href="/"><img src="/images/logo.png" height="60" width="90" alt="Your logo"></a>
 					</div>
 					
-					<!-- Vidno samo na majhnih napravah < 768px -->
-					<div class="well well-small visible-xs">
-						<!--<a class="btn btn-success btn-block" href="#">Sign up</a>
-						<a class="btn btn-primary btn-block" href="#">Login</a>-->
-						<?php echo anchor('main/logout', 'Logout', 'class="btn btn-danger btn-block"'); ?>
-					</div>
+					<div class="navbar-collapse collapse navbar-responsive-collapse">
+						<ul class="nav navbar-nav">
+							<li class="active">
+								<?php echo anchor('main', 'Home'); ?>
+							</li>
 
-				</div>
-			</div>
-		</nav>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">My EasyDo <strong class="caret"></strong></a>
 
-		<!-- Modal -->
-		<div id="addTaskModal" class="modal fade" role="dialog">
-			<div class="modal-dialog">
+								<ul class="dropdown-menu">
+									<li>
+										<?php echo anchor('my_profile', 'My Profile'); ?>
+									</li>
 
-				<!-- Modal content-->
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
-						<h3 class="modal-title text-center">Add new DoTask</h3>
-					</div>
-					<div class="modal-body">
-						<form class="form-horizontal">
-							<div class="form-group">
-								<label class="col-lg-2 col-lg-offset-1 control-label" for="taskName">Task name</label>
-								<div class="col-lg-8">
-									<input class="form-control" id="taskName" placeholder="Task name" type="text">
-								</div>
-							</div>
+									<li>
+										<?php echo anchor('overview', 'Overview'); ?>
+									</li>
+
+									<li>
+										<a href="#" data-toggle="modal" data-target="#addTaskModal">Add DoTask</a>
+									</li>
+
+									<li>
+										<?php echo anchor('activity_chart', 'Activity Chart'); ?>
+									</li>
+								</ul>
+							</li>
 							
-							<div class="form-group">
-								<label class="col-lg-2 col-lg-offset-1 control-label" for="taskDescription">Description</label>
-								<div class="col-lg-8">
-									<textarea class="form-control" id="taskDescription" placeholder="Description" rows="4"></textarea>
-								</div>
-							</div>
+							<li>
+								<!--<a href="#">About us</a>-->
+								<?php echo anchor('about_us_online', 'About us'); ?>
+							</li>
+							
+							<li>
+								<!--<a href="#">Contact</a>-->
+								<?php echo anchor('contact_online', 'Contact'); ?>
+							</li>
 
-							<div class="form-group">
-								<label class="col-lg-2 col-lg-offset-1 control-label" for="taskCategory">Category</label>
-								<div class="col-lg-8">
-									<input list="category" class="form-control" id="taskCategory" placeholder="Category" type="text">
-									<datalist id="category">
-										<option value="Home">
-										<option value="Book">
-										<option value="Movie">
-										<option value="Music">
-										<option value="Person">
-										<option value="Food">
-										<option value="Idea">
-										<option value="Shopping">
-										<option value="School">
-										<option value="Job">
-										<option value="Other">
-									</datalist>
-								</div>
-							</div>
+						</ul>
 
-							<div class="form-group">
-								<label class="col-lg-2 col-lg-offset-1 control-label" for="taskDeadline">Deadline</label>
-								<div class="col-lg-8">
-									<input class="form-control" id="taskDeadline" placeholder="Deadline" type="text">
-								</div>
-							</div>
+						<form class="navbar-form navbar-left">
+		          			<div class="form-group">
+			                    <div class="input-group">
+			                    	<label for="search" class="sr-only">Search</label>
+			                        <input type="text" id="search" class="form-control" placeholder="Search" />
+			                        <span class="input-group-addon green"><span class="glyphicon glyphicon-search"></span></span>
+			                    </div>
+			                </div>
+		                </form>
 
-							<div class="form-group">
-								<label class="col-lg-2 col-lg-offset-1 control-label" for="taskPriority">Priority</label>
-								<div class="col-lg-8">
-									<input class="form-control" id="taskPriority" placeholder="Priority" type="text"><br/>
-									<button class="btn btn-success pull-right" type="submit">Confirm</button>
-								</div>
-							</div>
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<div class="nav navbar-nav navbar-right login hidden-xs">
+							<!--<a class="btn btn-success" href="#">Sign up</a>
+							<a class="btn btn-primary" href="#">Login</a>-->
+							<?php echo anchor('main/logout', 'Logout', 'class="btn btn-danger"'); ?>
+						</div>
+						
+						<!-- Vidno samo na majhnih napravah < 768px -->
+						<div class="well well-small visible-xs">
+							<!--<a class="btn btn-success btn-block" href="#">Sign up</a>
+							<a class="btn btn-primary btn-block" href="#">Login</a>-->
+							<?php echo anchor('main/logout', 'Logout', 'class="btn btn-danger btn-block"'); ?>
+						</div>
+
 					</div>
 				</div>
+			</nav>
 
+			<!-- Modal -->
+			<div id="addTaskModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h3 class="modal-title text-center">Add new DoTask</h3>
+						</div>
+						<div class="modal-body">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="col-lg-2 col-lg-offset-1 control-label" for="taskName">Task name</label>
+									<div class="col-lg-8">
+										<input class="form-control" id="taskName" placeholder="Task name" type="text">
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="col-lg-2 col-lg-offset-1 control-label" for="taskDescription">Description</label>
+									<div class="col-lg-8">
+										<textarea class="form-control" id="taskDescription" placeholder="Description" rows="4"></textarea>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-lg-2 col-lg-offset-1 control-label" for="taskCategory">Category</label>
+									<div class="col-lg-8">
+										<input list="category" class="form-control" id="taskCategory" placeholder="Category" type="text">
+										<datalist id="category">
+											<option value="Home">
+											<option value="Book">
+											<option value="Movie">
+											<option value="Music">
+											<option value="Person">
+											<option value="Food">
+											<option value="Idea">
+											<option value="Shopping">
+											<option value="School">
+											<option value="Job">
+											<option value="Other">
+										</datalist>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-lg-2 col-lg-offset-1 control-label" for="taskDeadline">Deadline</label>
+									<div class="col-lg-8">
+										<input class="form-control" id="taskDeadline" placeholder="Deadline" type="text">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-lg-2 col-lg-offset-1 control-label" for="taskPriority">Priority</label>
+									<div class="col-lg-8">
+										<input class="form-control" id="taskPriority" placeholder="Priority" type="text"><br/>
+										<button class="btn btn-success pull-right" type="submit">Confirm</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+
+				</div>
 			</div>
-		</div>
 
-		<div class="container" id="main">
-			
+			<div class="container" id="main">
+				<div class="row about">
+					<div class="col-sm-8 col-sm-offset-2">
+						<div class="well">
+							<h2 class="text-center">Overview</h2>
+							<div class="table-responsive">
+								<table class="table table-hover">
+									<caption class="text-center">Overview of all tasks</caption>
+									<thead>
+										<tr>
+											<th>Task name</th>
+											<th>Category</th>
+											<th>Created</th>
+											<th>Deadline</th>
+											<th>Priority</th>
+											<th>Status</th>
+											<th colspan="3">Actions</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="success">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>Done</td>			
+											<td>
+												<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+												<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+												<input type="hidden" name="edit_task" value="php value" />
+											</td>
+										</tr>
 
+										<tr class="warning">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>Pending</td>			
+											<td>
+												<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-check"></span></button>
+												<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+												<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+												<input type="hidden" name="edit_task" value="php value" />
+											</td>
+										</tr>
+
+										<tr class="danger">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>Missed</td>			
+											<td>
+												<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+												<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+												<input type="hidden" name="edit_task" value="php value" />
+											</td>
+										</tr>
+										<tr class="danger">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>Missed</td>			
+											<td>
+												<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+												<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+												<input type="hidden" name="edit_task" value="php value" />
+											</td>
+										</tr>
+										<tr class="danger">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>Missed</td>			
+											<td>
+												<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+												<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+												<input type="hidden" name="edit_task" value="php value" />
+											</td>
+										</tr>
+										<tr class="danger">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>Missed</td>			
+											<td>
+												<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+												<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+												<input type="hidden" name="edit_task" value="php value" />
+											</td>
+										</tr>
+										<tr class="danger">
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>Missed</td>			
+											<td>
+												<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>
+												<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+												<input type="hidden" name="edit_task" value="php value" />
+											</td>
+										</tr>
+										
+										
+										<div id="paginacija">PAGINACIJA</div>
+									</tbody>
+								</table>
+							</div>
+
+					  	</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 	</body>
 
-	<footer>
+	<footer id="footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-2">

@@ -24,50 +24,48 @@
 		<div class="container signUpTop">
 
 			<form class="form-signin">
+			<?php echo form_open('Sign_up/verifySignUp', array('id'=>'forma', 'class'=>'form-signin')); ?>
 				<img class="img-responsive center-block logo" src="/images/logo.png" alt="logo" width="216" height="137" />
 				<h2 class="form-signin-heading text-center">Please sign up</h2>
 
 				<div class="form-group">
 					<div class="input-group">
-						<label for="inputName" class="sr-only">name</label>
+						<label for="name" class="sr-only">Name</label>
 						<span class="input-group-addon red"><span class="glyphicon glyphicon-user"></span></span>
-						<input type="text" id="inputName" class="form-control" placeholder="Name" required/>
+						<input type="text" name="name" id="name" class="form-control" placeholder="Name" value="<?php echo set_value('name'); ?>" required/>
 					</div>
 				</div>
+				<?php echo form_error('name', '<p>', '</p>'); ?>
 
 				<div class="form-group">
                     <div class="input-group">
-                    	<label for="inputEmail" class="sr-only">Email</label>
+                    	<label for="email" class="sr-only">Email</label>
                         <span class="input-group-addon green"><span class="glyphicon glyphicon-envelope"></span></span>
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email Address" />
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" value="<?php echo set_value('email'); ?>" required/>
                     </div>
                 </div>
+                <?php echo form_error('email', '<p class="error">', '</p>'); ?>
 
                 <div class="form-group">
                     <div class="input-group">
-                    	<label for="inputPassword" class="sr-only">Password</label>
+                    	<label for="password" class="sr-only">Password</label>
                         <span class="input-group-addon blue"><span class="glyphicon glyphicon-lock"></span></span>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" />
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" required />
                     </div>
                 </div>
+				<?php echo form_error('password', '<p class="error">', '</p>'); ?>
 
                 <div class="form-group">
                     <div class="input-group">
-                    	<label for="inputRetypePassword" class="sr-only">Retype password</label>
+                    	<label for="repassword" class="sr-only">Retype password</label>
                         <span class="input-group-addon yellow"><span class="glyphicon glyphicon-lock"></span></span>
-                        <input type="password" id="inputRetypePassword" class="form-control" placeholder="Retype password" />
+                        <input type="password" name="repassword" id="repassword" class="form-control" placeholder="Retype password" value="<?php echo set_value('repassword'); ?>" required/>
                     </div>
                 </div>
+                <?php echo form_error('repassword', '<p class="error">', '</p>'); ?>
 
-                 <!--<div class="form-group">
-                    <div class="input-group datePicker">
-                    	<label for="dateBirth" class="sr-only">Date of birth</label>
-                        <span class="input-group-addon yellow"><span class="glyphicon glyphicon-calendar"></span></span>
-                        <input type="text" id="dateBirth" class="form-control" placeholder="Date of birth" />
-                    </div>
-                </div>-->
-
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+				<!--<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>-->
+				<input id="signup" class="btn btn-lg btn-primary btn-block" type="submit" value="Sign up"/>
 				<p class="text-center go-home">Go to <?php echo anchor('index', 'homepage'); ?></p>
 			</form>
 
