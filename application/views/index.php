@@ -34,7 +34,7 @@
 					</button>
 					
 					<!-- Logo - drugaačna preusmeritev če si online ali ne-->
-					<a class="navbar-brand" href="/"><img src="/images/logo.png" height="60" width="108" alt="Your logo"></a>
+					<a class="navbar-brand" href="/"><img src="/images/logo.png" height="60" width="90" alt="Your logo"></a>
 				</div>
 				
 				<div class="navbar-collapse collapse navbar-responsive-collapse">
@@ -59,7 +59,7 @@
 						<!--<a class="btn btn-success" href="#">Sign up</a>
 						<a class="btn btn-primary" href="#">Login</a>-->
 						<?php echo anchor('sign_up', 'Sign up', 'class="btn btn-success"'); ?>
-						<?php echo anchor('login', 'Login', 'class="btn btn-primary"'); ?>
+						<?php echo anchor('login', 'Login', 'class="btn btn-primary" '); ?>
 					</div>
 					
 					<!-- Vidno samo na majhnih napravah < 768px -->
@@ -68,7 +68,8 @@
 						<a class="btn btn-primary btn-block" href="#">Login</a>-->
 						<?php echo anchor('sign_up', 'Sign up', 'class="btn btn-success btn-block"'); ?>
 						<?php echo anchor('login', 'Login', 'class="btn btn-primary  btn-block"'); ?>
-					</div>	
+					</div>
+
 				</div>
 			</div>
 		</nav>

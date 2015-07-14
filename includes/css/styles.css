@@ -108,10 +108,149 @@ body {
 }  
 
 /* --------------------------------------
-   Contact
+   Login
    -------------------------------------- */
- 
+
+.go-home {
+	margin-top: 5px;
+	margin-bottom: -5px;
+}
    
+.loginTop{
+	margin-top: 8%;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+	background-color: #eee;
+    background-image: none;
+    border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.form-signin input[type='email'] {
+    margin-bottom: 2px;
+}
+
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+:-ms-input-placeholder.form-control {
+    color: #999;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.4285;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+::after, ::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+input {
+    line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------
+   Sign Up
+   -------------------------------------- */
+
+.signUpTop{
+	margin-top: 5%;
+}
+   
+.logo {
+	margin-top: -10px;
+	margin-bottom: -10px;
+}
+
+.input-group-addon.blue{
+    background-color: #337ab7;
+    border-color: #337ab7;
+	color: #fff;
+}
+
+.input-group-addon.red{
+    background-color: #d9534f;
+    border-color: #d9534f;
+	color: #fff;
+}
+
+.input-group-addon.green{
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+	color: #fff;
+}
+.input-group-addon.yellow{
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+	color: #fff;
+}
+
+/* --------------------------------------
+   Main
+   -------------------------------------- */
+
+.priority-look {
+    background-color: #337ab7;
+	color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.carousel-controls-mini {
+	margin-top: 10px;
+}
+
+.carousel-controls-mini a {
+	font-size: 30px;
+	color: #fff;
+}
+
+ 
 /* --------------------------------------
    Global Styles
    -------------------------------------- */

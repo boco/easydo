@@ -41,17 +41,39 @@
 						<div class="navbar-collapse collapse navbar-responsive-collapse">
 							<ul class="nav navbar-nav">
 								<li>
-									<?php echo anchor('index', 'Home'); ?>
+									<?php echo anchor('main', 'Home'); ?>
+								</li>
+
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">My EasyDo <strong class="caret"></strong></a>
+
+									<ul class="dropdown-menu">
+										<li>
+											<?php echo anchor('my_profile', 'My Profile'); ?>
+										</li>
+
+										<li>
+											<?php echo anchor('overview', 'Overview'); ?>
+										</li>
+
+										<li>
+											<a href="#" data-toggle="modal" data-target="#addTaskModal">Add DoTask</a>
+										</li>
+
+										<li>
+											<?php echo anchor('activity_chart', 'Activity Chart'); ?>
+										</li>
+									</ul>
 								</li>
 								
 								<li>
 									<!--<a href="#">About us</a>-->
-									<?php echo anchor('about_us_offline', 'About us'); ?>
+									<?php echo anchor('about_us_online', 'About us'); ?>
 								</li>
 								
 								<li class="active">
 									<!--<a href="#">Contact</a>-->
-									<?php echo anchor('contact_offline', 'Contact'); ?>
+									<?php echo anchor('contact_online', 'Contact'); ?>
 								</li>
 
 							</ul>
@@ -141,9 +163,9 @@
 					<div class="col-sm-2">
 						<h6>Navigation</h6>
 						<ul class="list-unstyled">
-							<li><?php echo anchor('index', 'Home'); ?></li>
-							<li><?php echo anchor('about_us_offline', 'About us'); ?></li>
-							<li><?php echo anchor('contact_offline', 'Contact'); ?></li>
+							<li><?php echo anchor('main', 'Home'); ?></li>
+							<li><?php echo anchor('about_us_online', 'About us'); ?></li>
+							<li><?php echo anchor('contact_online', 'Contact'); ?></li>
 						</ul>
 					</div>
 										
