@@ -23,8 +23,7 @@
 	<body class="login">
 		<div class="container signUpTop">
 
-			<form class="form-signin">
-			<?php echo form_open('Sign_up/verifySignUp', array('id'=>'forma', 'class'=>'form-signin')); ?>
+			<?php echo form_open('Sign_up/verifysignup', array('id'=>'forma', 'class'=>'form-signin')); ?>
 				<img class="img-responsive center-block logo" src="/images/logo.png" alt="logo" width="216" height="137" />
 				<h2 class="form-signin-heading text-center">Please sign up</h2>
 
@@ -44,7 +43,7 @@
                         <input type="email" name="email" id="email" class="form-control" placeholder="Email Address" value="<?php echo set_value('email'); ?>" required/>
                     </div>
                 </div>
-                <?php echo form_error('email', '<p class="error">', '</p>'); ?>
+                <?php echo form_error('email', '<p>', '</p>'); ?>
 
                 <div class="form-group">
                     <div class="input-group">
@@ -53,7 +52,7 @@
                         <input type="password" name="password" id="password" class="form-control" placeholder="Password" value="<?php echo set_value('password'); ?>" required />
                     </div>
                 </div>
-				<?php echo form_error('password', '<p class="error">', '</p>'); ?>
+				<?php echo form_error('password', '<p>', '</p>'); ?>
 
                 <div class="form-group">
                     <div class="input-group">
@@ -62,7 +61,7 @@
                         <input type="password" name="repassword" id="repassword" class="form-control" placeholder="Retype password" value="<?php echo set_value('repassword'); ?>" required/>
                     </div>
                 </div>
-                <?php echo form_error('repassword', '<p class="error">', '</p>'); ?>
+                <?php echo form_error('repassword', '<p>', '</p>'); ?>
 
 				<!--<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>-->
 				<input id="signup" class="btn btn-lg btn-primary btn-block" type="submit" value="Sign up"/>

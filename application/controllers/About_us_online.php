@@ -8,6 +8,11 @@ class About_us_online extends CI_Controller {
 	 
 	public function index()
 	{
-		$this->load->view('about_us_online');
+		if($this->session->userdata('logged_in')) {
+			$this->load->view('about_us_online');
+		}else{
+			redirect('index','refresh');
+		}
 	}
+	
 }

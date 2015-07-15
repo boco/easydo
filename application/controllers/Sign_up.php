@@ -12,14 +12,12 @@ class Sign_up extends CI_Controller {
 		$this->load->view('sign_up');
 	}
 
-	public function verifySignUp (){
-		$this->load->library('form_validation');
+	function verifysignup (){
+		//$this->db_select = $this->load->database();
 		$this->form_validation->set_rules('name', 'Name', 'trim|htmlspecialchars|stripslashes|callback_check_name');
 		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|callback_check_email|callback_check_email_available');
 		$this->form_validation->set_rules('password', 'Password', 'trim|htmlspecialchars|stripslashes|callback_check_password');
 		$this->form_validation->set_rules('repassword', 'Re-Password', 'trim|htmlspecialchars|stripslashes|callback_check_repassword');
-		$name=$this->input->post('name');
-		echo $name;
 		if ($this->form_validation->run() == TRUE){
 			$name=$this->input->post('name');
 			$email=$this->input->post('email');
@@ -39,7 +37,7 @@ class Sign_up extends CI_Controller {
 			redirect('main', 'refresh');
 		}
 		else{
-			$this->load->view('signup');
+			$this->load->view('sign_up');
 		}
 	}
 
