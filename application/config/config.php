@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'https://' . getenv('OPENSHIFT_APP_DNS') . '/';
+$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +58,7 @@ $config['uri_protocol']	= 'REQUEST_URI';
 |
 | http://codeigniter.com/user_guide/general/urls.html
 */
+
 $config['url_suffix'] = '';
 
 /*
@@ -154,6 +155,7 @@ $config['composer_autoload'] = FALSE;
 */
 $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 
+
 /*
 |--------------------------------------------------------------------------
 | Enable Query Strings
@@ -179,11 +181,11 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 | use segment based URLs.
 |
 */
-$config['allow_get_array'] 		= TRUE;
+$config['allow_get_array'] = TRUE;
 $config['enable_query_strings'] = FALSE;
-$config['controller_trigger'] 	= 'c';
-$config['function_trigger'] 	= 'm';
-$config['directory_trigger'] 	= 'd';
+$config['controller_trigger'] = 'c';
+$config['function_trigger'] = 'm';
+$config['directory_trigger'] = 'd';
 
 /*
 |--------------------------------------------------------------------------
@@ -209,7 +211,7 @@ $config['directory_trigger'] 	= 'd';
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = getenv('CI_ENV') == 'development' ? 4 : 0; // no logging in production
+$config['log_threshold'] = 0;
 
 /*
 |--------------------------------------------------------------------------
@@ -220,7 +222,7 @@ $config['log_threshold'] = getenv('CI_ENV') == 'development' ? 4 : 0; // no logg
 | application/logs/ directory. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = getenv('OPENSHIFT_LOG_DIR');
+$config['log_path'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -234,7 +236,7 @@ $config['log_path'] = getenv('OPENSHIFT_LOG_DIR');
 | Note: Leaving it blank will default to 'php'.
 |
 */
-$config['log_file_extension'] = 'log';
+$config['log_file_extension'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -279,7 +281,7 @@ $config['error_views_path'] = '';
 | application/cache/ directory.  Use a full server path with trailing slash.
 |
 */
-$config['cache_path'] = getenv('OPENSHIFT_DATA_DIR') . 'storage/framework/cache';
+$config['cache_path'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -303,7 +305,7 @@ $config['cache_query_string'] = FALSE;
 | http://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = getenv('CI_KEY');
+$config['encryption_key'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -328,6 +330,8 @@ $config['encryption_key'] = getenv('CI_KEY');
 |	The location to save sessions to, driver dependant.
 |
 |	For the 'files' driver, it's a path to a writable directory.
+|	WARNING: Only absolute paths are supported!
+|
 |	For the 'database' driver, it's a table name.
 |	Please read up the manual for the format with other session drivers.
 |
@@ -354,7 +358,7 @@ $config['encryption_key'] = getenv('CI_KEY');
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'ci_session';
 $config['sess_expiration'] = 7200;
-$config['sess_save_path'] = getenv('OPENSHIFT_DATA_DIR') . 'storage/framework/sessions';
+$config['sess_save_path'] = NULL;
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
@@ -493,4 +497,4 @@ $config['rewrite_short_tags'] = FALSE;
 | Comma-separated:	'10.0.1.200,192.168.5.0/24'
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
-$config['proxy_ips'] = getenv('OPENSHIFT_HAPROXY_IP') ?: '';
+$config['proxy_ips'] = '';

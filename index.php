@@ -47,13 +47,13 @@
  *
  * This can be set to anything, but default usage is:
  *
- *     local (default when developing locally)
  *     development
- *     production (default for remote deployment)
+ *     testing
+ *     production
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', isset($_ENV['CI_ENV']) ? $_ENV['CI_ENV'] : 'local');
+	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
 /*
  *---------------------------------------------------------------
@@ -65,11 +65,12 @@
  */
 switch (ENVIRONMENT)
 {
-	case 'local':
 	case 'development':
 		error_reporting(-1);
 		ini_set('display_errors', 1);
-		break;
+	break;
+
+	case 'testing':
 	case 'production':
 		ini_set('display_errors', 0);
 		if (version_compare(PHP_VERSION, '5.3', '>='))
@@ -80,7 +81,8 @@ switch (ENVIRONMENT)
 		{
 			error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_USER_NOTICE);
 		}
-		break;
+	break;
+
 	default:
 		header('HTTP/1.1 503 Service Unavailable.', TRUE, 503);
 		echo 'The application environment is not set correctly.';

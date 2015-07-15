@@ -6,8 +6,40 @@ class Contact_offline extends CI_Controller {
 		parent::__construct();
     } 
 	 
-	public function index()
-	{
+	public function index()	{
 		$this->load->view('contact_offline');
+	}
+
+	function verifycontact(){
+		$this->form_validation->set_rules('name', 'Name', 'trim|htmlspecialchars|stripslashes|required');
+		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes||required|callback_check_email');
+		$this->form_validation->set_rules('message', 'Message', 'trim|htmlspecialchars|stripslashes|required');
+		$this->form_validation->set_rules('sum', 'Sum', 'trim|htmlspecialchars|stripslashes|required|callback_check_sum');
+		if ($this->form_validation->run() == TRUE){
+			redirect('contact_offline', 'refresh');
+		}
+		else{
+			$this->load->view('contact_offline');
+		}
+	}
+	
+	function check_email(){
+		$email = $this->input->post('email');
+		if(preg_match("/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/",$email)){
+			return TRUE;
+		}else{
+			$this->form_validation->set_message('check_email', 'Invalid email!');
+			return FALSE;
+		}
+	}
+
+	function check_sum(){
+		$email = $this->input->post('sum');
+		if($email=='5'){
+			return TRUE;
+		}else{
+			$this->form_validation->set_message('check_sum', 'Wrong sum!');
+			return FALSE;
+		}
 	}
 }
