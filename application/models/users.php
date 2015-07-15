@@ -1,7 +1,8 @@
 <!-- models/users.php -->
-<!-- table "users": [user_id|name|email|password|birthday|gender|registered|settings] -->
+<!-- table "users": [user_id|name|email|password|registered|settings] -->
 <?php
 Class Users extends CI_Model {
+
 	function getAll($user_id){
 		$this->db->select('user_id, name, email, registered, settings');
 		$this->db->from('users');

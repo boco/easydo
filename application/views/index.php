@@ -58,7 +58,7 @@
 					</div>
 					<p class="lead">EasyDo is an online application based on the to-do list sample. With its features it helps you with managing your daily to-dos and tasks. Whether you are shopping or getting ready for the holidays, EasyDo can always help you.</p>
 					<!--<a href="#" class="btn btn-large btn-primary">Sign up for free</a>-->
-					<?php echo anchor('sign_up', 'Sign up for free', 'class="btn btn-large btn-primary"'); ?>
+					<?php echo anchor('sign_up', 'Sign up for free', 'class="btn btn-lg btn-primary"'); ?>
 				</div>
 			</div>
 		</div>

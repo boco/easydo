@@ -12,8 +12,7 @@ class Login extends CI_Controller {
 		$this->load->view('login');
 	}
 
-	function verifyLogin(){
-		$this->load->library('form_validation');
+	function verifylogin(){
 		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|callback_check_email|callback_check_email_exist');
 		$this->form_validation->set_rules('password', 'Password', 'trim|htmlspecialchars|stripslashes|callback_check_password');
 		if ($this->form_validation->run() == TRUE){

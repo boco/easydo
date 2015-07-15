@@ -232,4 +232,4 @@
 <?php include 'footer_online.php'; ?>
 <?php include 'includeJs.php'; ?>
 
-</html>glyphicon glyphicon-edit
+</html>
