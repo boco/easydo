@@ -23,7 +23,6 @@
 	<body class="login">
 		<div class="container signUpTop">
 
-			<form class="form-signin">
 			<?php echo form_open('Sign_up/verifySignUp', array('id'=>'forma', 'class'=>'form-signin')); ?>
 				<img class="img-responsive center-block logo" src="/images/logo.png" alt="logo" width="216" height="137" />
 				<h2 class="form-signin-heading text-center">Please sign up</h2>
@@ -67,7 +66,7 @@
 				<!--<button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>-->
 				<input id="signup" class="btn btn-lg btn-primary btn-block" type="submit" value="Sign up"/>
 				<p class="text-center go-home">Go to <?php echo anchor('index', 'homepage'); ?></p>
-			</form>
+			<?php form_close(); ?>
 
 		</div> <!-- /container -->
 	</body>
