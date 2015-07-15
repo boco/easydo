@@ -2,11 +2,12 @@
 
 
 <?php include 'header.php';
-				$taskMonths = array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'); // podatki iz php controlerja
-				$taskCompleted = array(0, 0, 3, 4, 5,6,7,8,3,4,11,5); // podatki iz php controlerja
-				$taskInProgress = array(0, 0, 2, 4, 2,1,7,3,7,1,1,2); // podatki iz php controlerja
-				$taskUncompleted = array(0, 0, 0, 4, 2,4,5,7,2,4,4,5); // podatki iz php controlerja
+
+	$taskMonths = array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'); // podatki iz php controlerja
+	$taskCompleted = array(0, 0, 3, 4, 5,6,7,8,3,4,11,5); // podatki iz php controlerja
+	$taskInProgress = array(0, 0, 2, 4, 2,1,7,3,7,1,1,2); // podatki iz php controlerja
+	$taskUncompleted = array(0, 0, 0, 4, 2,4,5,7,2,4,4,5); // podatki iz php controlerja
  ?>
 
 <body>

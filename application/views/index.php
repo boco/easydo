@@ -111,8 +111,8 @@
 			</div>
 		</div>
 	</div>
+<?php include 'footer_offline.php'; ?>
 </body>
 
-<?php include 'footer_offline.php'; ?>
 <?php include 'includeJs.php'; ?>
 </html>

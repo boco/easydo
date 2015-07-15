@@ -11,7 +11,7 @@ footer {
 	background: #333;
 	color: #eee;
 	font-size: 12px;
-	padding: 20px;
+	padding: 12px;
 }
 
 .boxicon {
@@ -108,7 +108,7 @@ body {
    -------------------------------------- */
    
 .about{
-	margin-top: 60px;
+	padding-top: 60px;
 }  
 
 /* --------------------------------------
