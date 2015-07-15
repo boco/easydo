@@ -1,30 +1,12 @@
 <html>
 
-	<head>
-		<!-- Website Title & Description for Search Engine purposes -->
-		<title>EasyDo</title>
-		<link href="/images/favicon2.ico" rel="icon" type="image/x-icon" />
-		
-		<!-- Mobile viewport optimized -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		
-		<!-- Bootstrap CSS -->
-		<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="/includes/css/bootstrap-glyphicons.css" rel="stylesheet">
-		
-		<!-- Custom CSS -->
-		<link href="/includes/css/styles.css" rel="stylesheet">
-		
-		<!-- Include Modernizr in the head, before any other Javascript -->
-		<script src="/includes/js/modernizr-2.6.2.min.js"></script>
-		
-	</head>
+<?php include 'header.php'; ?>
 
 	<body class="login">
 		<div class="container signUpTop">
 
 			<?php echo form_open('Sign_up/verifysignup', array('id'=>'forma', 'class'=>'form-signin')); ?>
-				<img class="img-responsive center-block logo" src="/images/logo.png" alt="logo" width="216" height="137" />
+				<img class="img-responsive center-block logo" src=<?php echo base_url('/images/logo.png'); ?> alt="logo" width="216" height="137" />
 				<h2 class="form-signin-heading text-center">Please sign up</h2>
 
 				<div class="form-group">
@@ -71,18 +53,7 @@
 		</div> <!-- /container -->
 	</body>
 
-	<!-- All Javascript at the bottom of the page for faster page loading -->
-		
-	<!-- First try for the online version of jQuery-->
-	<script src="http://code.jquery.com/jquery.js"></script>
-	
-	<!-- If no online access, fallback to our hardcoded version of jQuery -->
-	<script>window.jQuery || document.write('<script src="/includes/js/jquery-1.8.2.min.js"><\/script>')</script>
-	
-	<!-- Bootstrap JS -->
-	<script src="/bootstrap/js/bootstrap.min.js"></script>
-	
-	<!-- Custom JS -->
-	<script src="/includes/js/script.js"></script>
+
+<?php include 'includeJs.php'; ?>
 
 </html>
