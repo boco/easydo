@@ -64,9 +64,11 @@
 			</div>
 		</div>	
 	</div>
+	<?php include 'footer_online.php'; ?>
+	
 </body>
 
-<?php include 'footer_online.php'; ?>
+
 <?php include 'includeJs.php'; ?>
 <script src="http://code.highcharts.com/highcharts.js"></script>
 <script src="http://code.highcharts.com/modules/exporting.js"></script>
@@ -129,6 +131,4 @@
     });
 });
 </script>
->>>>>>> origin/master
-
 </html>

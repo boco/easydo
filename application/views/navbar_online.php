@@ -9,7 +9,6 @@
 				<span class="icon-bar"></span>
 			</button>
 			
-			<!-- Logo - drugaačna preusmeritev če si online ali ne-->
 			<a class="navbar-brand" href=<?php echo base_url('index.php/main'); ?>>
 				<img src=<?php echo base_url('/images/logo.png'); ?> height="60" width="90" alt="Your logo"/>
 			</a>
@@ -44,12 +43,10 @@
 				</li>
 				
 				<li>
-					<!--<a href="#">About us</a>-->
 					<?php echo anchor('about_us_online', 'About us'); ?>
 				</li>
 				
 				<li>
-					<!--<a href="#">Contact</a>-->
 					<?php echo anchor('contact_online', 'Contact'); ?>
 				</li>
 
@@ -66,15 +63,11 @@
             </form>
 
 			<div class="nav navbar-nav navbar-right login hidden-xs">
-				<!--<a class="btn btn-success" href="#">Sign up</a>
-				<a class="btn btn-primary" href="#">Login</a>-->
 				<?php echo anchor('main/logout', 'Logout', 'class="btn btn-danger"'); ?>
 			</div>
 			
 			<!-- Vidno samo na majhnih napravah < 768px -->
 			<div class="well well-small visible-xs">
-				<!--<a class="btn btn-success btn-block" href="#">Sign up</a>
-				<a class="btn btn-primary btn-block" href="#">Login</a>-->
 				<?php echo anchor('main/logout', 'Logout', 'class="btn btn-danger btn-block"'); ?>
 			</div>
 

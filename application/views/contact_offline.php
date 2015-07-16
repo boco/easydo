@@ -77,9 +77,9 @@
 				</div>
 			</div>
 		</div>
-	
+		
 		<?php include 'footer_offline.php'; ?>
 	</body>
 
-<?php include 'includeJs.php'; ?>
+	<?php include 'includeJs.php'; ?>
 </html>
