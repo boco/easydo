@@ -13,8 +13,8 @@ class Login extends CI_Controller {
 	}
 
 	function verifylogin(){
-		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|callback_check_email|callback_check_email_exist');
-		$this->form_validation->set_rules('password', 'Password', 'trim|htmlspecialchars|stripslashes|callback_check_password');
+		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|callback_check_email|required|callback_check_email_exist');
+		$this->form_validation->set_rules('password', 'Password', 'trim|htmlspecialchars|stripslashes|required|callback_check_password');
 		if ($this->form_validation->run() == TRUE){
 			$email=$this->input->post('email');
 			$this->session->set_userdata('email', $email);

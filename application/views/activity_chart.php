@@ -12,7 +12,6 @@
 
 <body>
 	<?php include 'navbar_online.php'; ?>
-	<?php include 'add_task_modal.php'; ?>
 
 	<div class="container" id="wrap">
 		<div class="row about" >
@@ -130,5 +129,6 @@
     });
 });
 </script>
+>>>>>>> origin/master
 
 </html>

@@ -19,7 +19,7 @@ class Main extends CI_Controller {
 			$data['settings']=$this->users->getAll($this->session->userdata('user_id'))->settings;
 			$data['name']=$this->session->userdata('name');
 			//$data['graf']=$this->graf();
-			$this->load->view('main',$data);
+			$this->load->view('main', $data);
 		}else{
 			redirect('index','refresh');
 		}

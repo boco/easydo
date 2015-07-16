@@ -14,10 +14,13 @@ footer {
 	padding: 12px;
 }
 
+<<<<<<< HEAD
+=======
 .boxicon {
 	  padding: .4em .2em .3em .5em ;
 
 }
+>>>>>>> origin/master
 /* Set the fixed height of the footer here */
 html,
 body {
@@ -30,9 +33,9 @@ body {
   min-height: 100%;
   height: auto;
   /* Negative indent footer by its height */
-  margin: 0 auto -135px;
+  margin: 0 auto -145px;
   /* Pad bottom by footer height */
-  padding: 0 0 135px;
+  padding: 0 0 145px;
 }
 
 /* Set the fixed height of the footer here */
@@ -92,15 +95,15 @@ body {
 }
 
 #slide1 {
-	background: url("../../images/carousel_medium_01.jpg") top center no-repeat;
+	background: url("/images/carousel_medium_01.jpg") top center no-repeat;
 }
 
 #slide2 {
-	background: url("../../images/carousel_medium_02.jpg") top center no-repeat;
+	background: url("/images/carousel_medium_02.jpg") top center no-repeat;
 }
 
 #slide3 {
-	background: url("../../images/carousel_medium_03.jpg") top center no-repeat;
+	background: url("/images/carousel_medium_03.jpg") top center no-repeat;
 }
 
 /* --------------------------------------
@@ -124,6 +127,10 @@ body {
 	margin-top: 8%;
 }
 
+.oddaljenost {
+	margin-bottom: 10px;
+}
+
 .form-signin {
     max-width: 330px;
     padding: 15px;
@@ -134,10 +141,6 @@ body {
 	border-radius: 4px;
 }
 
-.form-signin input[type='email'] {
-    margin-bottom: 2px;
-}
-
 .form-signin .form-control {
     position: relative;
     height: auto;
@@ -146,10 +149,6 @@ body {
     box-sizing: border-box;
     padding: 10px;
     font-size: 16px;
-}
-
-:-ms-input-placeholder.form-control {
-    color: #999;
 }
 
 .form-control {
@@ -171,33 +170,7 @@ body {
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
-button, input, select, textarea {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-}
 
-::after, ::before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-input {
-    line-height: normal;
-}
-
-button, input, optgroup, select, textarea {
-    margin: 0;
-    font: inherit;
-    color: inherit;
-}
-
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
 
 /* --------------------------------------
    Sign Up
@@ -305,15 +278,15 @@ button, input, optgroup, select, textarea {
 	}
 		
 	#slide1 {
-		background: url("../../images/carousel_small_01.jpg") top center no-repeat;
+		background: url("/images/carousel_small_01.jpg") top center no-repeat;
 	}
 
 	#slide2 {
-		background: url("../../images/carousel_small_02.jpg") top center no-repeat;
+		background: url("/images/carousel_small_02.jpg") top center no-repeat;
 	}
 
 	#slide3 {
-		background: url("../../images/carousel_small_03.jpg") top center no-repeat;
+		background: url("/images/carousel_small_03.jpg") top center no-repeat;
 	}
 	
 	
@@ -333,15 +306,15 @@ button, input, optgroup, select, textarea {
 	}	
 		
 	#slide1 {
-		background: url("../../images/carousel_large_01.jpg") top center no-repeat;
+		background: url("/images/carousel_large_01.jpg") top center no-repeat;
 	}
 
 	#slide2 {
-		background: url("../../images/carousel_large_02.jpg") top center no-repeat;
+		background: url("/images/carousel_large_02.jpg") top center no-repeat;
 	}
 
 	#slide3 {
-		background: url("../../images/carousel_large_03.jpg") top center no-repeat;
+		background: url("/images/carousel_large_03.jpg") top center no-repeat;
 	}	
 	
 	#footer {

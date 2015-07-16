@@ -13,11 +13,10 @@ class Sign_up extends CI_Controller {
 	}
 
 	function verifysignup (){
-		//$this->db_select = $this->load->database();
-		$this->form_validation->set_rules('name', 'Name', 'trim|htmlspecialchars|stripslashes|callback_check_name');
-		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|callback_check_email|callback_check_email_available');
-		$this->form_validation->set_rules('password', 'Password', 'trim|htmlspecialchars|stripslashes|callback_check_password');
-		$this->form_validation->set_rules('repassword', 'Re-Password', 'trim|htmlspecialchars|stripslashes|callback_check_repassword');
+		$this->form_validation->set_rules('name', 'Name', 'trim|htmlspecialchars|stripslashes|required|callback_check_name');
+		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|required|callback_check_email|callback_check_email_available');
+		$this->form_validation->set_rules('password', 'Password', 'trim|htmlspecialchars|stripslashes|required|callback_check_password');
+		$this->form_validation->set_rules('repassword', 'Retype Password', 'trim|htmlspecialchars|stripslashes|required|callback_check_repassword');
 		if ($this->form_validation->run() == TRUE){
 			$name=$this->input->post('name');
 			$email=$this->input->post('email');
@@ -35,8 +34,7 @@ class Sign_up extends CI_Controller {
 			$this->session->set_userdata('logged_in', 1);
 			$this->session->set_userdata('email', $email);
 			redirect('main', 'refresh');
-		}
-		else{
+		}else{
 			$this->load->view('sign_up');
 		}
 	}
