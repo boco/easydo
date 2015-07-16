@@ -105,7 +105,7 @@
 				<div class="row about">
 					<div class="col-sm-6 col-sm-offset-3">
 						<div class="well">
-							<h2 class="text-center">Add DoTask</h2>
+							<h2 class="text-center">Edit DoTask</h2>
 
 							<?php echo form_open('edit_task/verifyedittask', array('class'=>'form-horizontal')); ?>
 								<div class="form-group">

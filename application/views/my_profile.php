@@ -23,7 +23,7 @@
 											<span class="glyphicon glyphicon-ok">
 											</span>
 										</span>
-										&nbsp;7
+										&nbsp;<?php echo $done; ?>
 									</h1>
 									<h3>Completed</h3>
 								</div>
@@ -34,7 +34,7 @@
 											<span class="glyphicon glyphicon-remove">
 											</span>
 										</span>
-										&nbsp;21
+										&nbsp;<?php echo $failed; ?>
 									</h1>
 									<h3>Uncompleted</h3>
 								</div>
@@ -45,7 +45,7 @@
 											<span class="glyphicon glyphicon-play">
 											</span>
 										</span>
-										&nbsp;4
+										&nbsp;<?php echo $pending; ?>
 									</h1>
 									<h3>In progress</h3>
 								</div>
@@ -55,7 +55,7 @@
 											<span class="glyphicon glyphicon-repeat">
 											</span>
 										</span><b>
-										&nbsp;4</b>
+										&nbsp;<?php echo $done + $failed + $pending; ?></b>
 									</h1>
 									<h3>Total</h3>
 								</div>
@@ -65,8 +65,9 @@
 				</div>
 
 				<div class="col-md-12">
-					<div class="row">
 
+					<!--
+					<div class="row">
 						<div class="col-md-6">
 							<div class="well what">
 								<h3>
@@ -129,82 +130,97 @@
 							</div>
 						</div>
 					</div>
+					-->
 
 					<div class="row">
 						<div class="col-md-6">
 							<div class="well what">
-								<h3>
-									<div class="pull-right">
-										<div class="btn-group">
-											<button type="button" class="btn-xs btn-success" aria-label="Save">
-												<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;Save
-											</button>
+								
+								<?php echo form_open('my_profile/save'); ?>
+									<h3>
+										<div class="pull-right">
+											<div class="btn-group">
+												<button type="submit" class="btn-xs btn-success" aria-label="Save">
+													<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;Save
+												</button>
+											</div>
+											<!--
+											<div class="btn-group">
+												<button type="button" class="btn-xs btn-danger" aria-label="Cancel">
+													<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;Cancel
+												</button>
+											</div>
+											-->
 										</div>
-										<div class="btn-group">
-											<button type="button" class="btn-xs btn-danger" aria-label="Cancel">
-												<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;Cancel
-											</button>
-										</div>
-									</div>
-								My profile</h3>
+									My profile</h3>
 
-
-								<form role="form">
 									<div class="form-group">
-										<label for="userEmail">
-											Email address
-										</label>
-										<input type="email" class="form-control" id="userEmail" value="dummy@email.com"/> 
+										<label for="userEmail">Email address</label>
+										<input type="email" class="form-control" name="userEmail" value="<?php echo set_value('userEmail', $email); ?>"/> 
 									</div>
 									<div class="form-group">
+								    	<span class="text-danger"><?php echo form_error('userEmail'); ?></span>
+						    		</div>
 
-										<label for="userUsername">
-											Username
-										</label>
-										<input type="input" class="form-control" id="userUsername"  value="Dumbster999"/>
+									<div class="form-group">
+										<label for="userName">Name</label>
+										<input type="input" class="form-control" name="userName"  value="<?php echo set_value('userName', $name); ?>"/>
 									</div>
 									<div class="form-group">
+								    	<span class="text-danger"><?php echo form_error('userName'); ?></span>
+						    		</div>
 
-										<label for="userPassword">
-											Password (leave empty if unchanged)
-										</label>
-										<input type="password" class="form-control" id="userPassword" />
+									<div class="form-group">
+										<label for="userPassword">Password (leave empty if unchanged)</label>
+										<input type="password" class="form-control" name="userPassword" />
 									</div>
 									<div class="form-group">
+								    	<span class="text-danger"><?php echo form_error('userPassword'); ?></span>
+						    		</div>
 
-										<label for="userPasswordRepeat">
-											Password repeat
-										</label>
-										<input type="password" class="form-control" id="userPasswordRepeat" />
+									<div class="form-group">
+										<label for="userPasswordRepeat">Password repeat</label>
+										<input type="password" class="form-control" name="userPasswordRepeat" />
 									</div>
+									<div class="form-group">
+								    	<span class="text-danger"><?php echo form_error('userPasswordRepeat'); ?></span>
+						    		</div>
 								</form>
 							</div>
 						</div>
 						<div class="col-md-6">
 							<div class="well what">
-								<h3>
+
+								<?php echo form_open('my_profile/settings'); ?>
+
+									<h3>
 									<div class="pull-right">
 										<div class="btn-group">
-											<button type="button" class="btn-xs btn-success" aria-label="Save">
+											<button type="submit" class="btn-xs btn-success" aria-label="Save">
 												<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;Save
 											</button>
 										</div>
+										<!--
 										<div class="btn-group">
 											<button type="button" class="btn-xs btn-danger" aria-label="Cancel">
 												<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;Cancel
 											</button>
 										</div>
+										-->
 									</div>
 								Settings</h3>
 
-
-								<form role="form">
 									<div class="form-group">
-										<label for="userEmail">
-											Displayed daily tasks
+										<label for="userSettings">
+											Displayed number of daily tasks
 										</label>
-										<input type="number" class="form-control" id="userEmail" value="4"/> 
+										<input type="number" class="form-control" name="userSettings" value="<?php echo set_value('userSettings', $settings); ?>"/> 
 									</div>
+									<div class="form-group">
+								    	<span class="text-danger"><?php echo form_error('userSettings'); ?></span>
+						    		</div>
+
+									<!--
 									<div class="form-group">
 
 										<label>
@@ -217,6 +233,7 @@
 										</div>
 										</div>
 									</div>
+									-->
 
 								</form>
 							</div>

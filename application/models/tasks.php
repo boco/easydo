@@ -114,5 +114,40 @@ Class Tasks extends CI_Model {
 		
 		return $query;
 	}
+
+	function getNumDone($user_id){
+		$this->db->select('task_id, user_id, created, completed');
+		$this->db->from('tasks');
+		$this->db->where('user_id', $user_id);
+		$this->db->where('completed', 1);
+
+		$query=$this->db->get();
+		
+		return $query->num_rows();
+	}
+
+	function getNumMissed($user_id, $date){
+		$this->db->select('task_id, user_id, created, completed');
+		$this->db->from('tasks');
+		$this->db->where('user_id', $user_id);
+		$this->db->where('completed', 0);
+		$this->db->where('deadline <', $date);
+
+		$query=$this->db->get();
+		
+		return $query->num_rows();
+	}
+
+	function getNumPending($user_id, $date){
+		$this->db->select('task_id, user_id, created, completed');
+		$this->db->from('tasks');
+		$this->db->where('user_id', $user_id);
+		$this->db->where('completed', 0);
+		$this->db->where('deadline >', $date);
+
+		$query=$this->db->get();
+		
+		return $query->num_rows();
+	}
 } 
 ?>

@@ -11,3 +11,5 @@
 	
 	<!-- Custom JS -->
 	<script src=<?php echo base_url('/includes/js/script.js');?>></script>
+	<script src=<?php echo base_url('/includes/js/datepicker.js');?>></script>
+	<script src=<?php echo base_url('/includes/js/search.js');?>></script>

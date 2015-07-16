@@ -52,15 +52,18 @@
 
 			</ul>
 
-			<form class="navbar-form navbar-left">
+			<!--
+			<div class="navbar-form navbar-left">
       			<div class="form-group">
                     <div class="input-group">
                     	<label for="search" class="sr-only">Search</label>
-                        <input type="text" id="search" class="form-control" placeholder="Search" />
+                        <input type="text" name="search" id="search" class="form-control" placeholder="Search" />
+                        <input id="hiddenurl" type="hidden" value="<?php echo base_url(); ?>">
                         <span class="input-group-addon green"><span class="glyphicon glyphicon-search"></span></span>
                     </div>
                 </div>
-            </form>
+            </div>
+            -->
 
 			<div class="nav navbar-nav navbar-right login hidden-xs">
 				<?php echo anchor('main/logout', 'Logout', 'class="btn btn-danger"'); ?>

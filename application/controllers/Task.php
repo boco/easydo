@@ -24,7 +24,7 @@ class Task extends CI_Controller {
 			$description=$this->input->post('taskDescription');
 			$category=$this->input->post('taskCategory');
 			$created=date('Y-m-d');
-			$deadline=$this->input->post('taskDeadline');
+			$deadline = date("Y-m-d", strtotime($this->input->post('taskDeadline')));
 			$priority=$this->input->post('taskPriority');
 			$completed=0;
 				
