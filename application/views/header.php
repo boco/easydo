@@ -13,6 +13,9 @@
 	
 	<!-- Custom CSS -->
 	<link href=<?php echo base_url('/includes/css/styles.css'); ?> rel="stylesheet">
+
+	<!-- Bootstrap datepicker-->
+	<link href=<?php echo base_url('/includes/css/datepicker.css'); ?> rel="stylesheet">
 	
 	<!-- Include Modernizr in the head, before any other Javascript -->
 	<script src=<?php echo base_url('/includes/js/modernizr-2.6.2.min.js');?>></script>

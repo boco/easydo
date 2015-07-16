@@ -1,12 +1,12 @@
 <html>
 
-
 <?php include 'header.php'; ?>
 
 	<body>
 		<div id="wrap">
 		
 		<?php include 'navbar_online.php'; ?>
+
 			<!-- TUKAJ PRIDE TASK -->
 			<div class="container" id="main">
 				<div class="row about">
@@ -66,10 +66,20 @@
 
 								<div class="form-group">
 									<label class="col-lg-3 control-label" for="taskDeadline">Deadline</label>
+									<div id="sandbox-container">
+									    <div class="input-daterange input-group col-sm-8" id="datepicker">
+									    	<input name="taskDeadline" class="input-sm form-control" type="text" placeholder="YYYY-mm-dd">
+									    </div> 
+									</div>
+								</div>
+
+								<!--
 									<div class="col-lg-8">
 										<input class="form-control" name="taskDeadline" placeholder="YYYY-mm-dd" type="datetime-local" value="<?php echo set_value('taskDeadline'); ?>">
 									</div>
 								</div>
+								-->
+
 								<div class="form-group">
 							    	<div class="col-sm-8 col-sm-offset-3">
 							    		<span class="text-danger"><?php echo form_error('taskDeadline'); ?></span>
