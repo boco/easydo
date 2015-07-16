@@ -14,8 +14,8 @@ class Overview extends CI_Controller {
 
 			$config=array();
 			$config['base_url']=base_url().'index.php/overview/index';
-			$config['total_rows']=$this->db->get_where('tasks',array('user_id' => $this->session->userdata('user_id')))->num_rows();
-			$config['per_page']=4;
+			$config['total_rows']=$this->db->get_where('tasks', array('user_id' => $this->session->userdata('user_id')))->num_rows();
+			$config['per_page']=5;
 			$config['uri_segment']=3;
 			$config['next_link'] = 'Next';
 			$config['prev_link'] = 'Prev';
@@ -51,7 +51,7 @@ class Overview extends CI_Controller {
 	function edit(){
 		$task_id = $this->input->post('edit_task');
 		$data['edit_task']=$this->tasks->getTaskById($task_id);
-		$this->load->view('edittask',$data);
+		$this->load->view('edit_task',$data);
 	}
 
 }

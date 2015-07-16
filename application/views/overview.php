@@ -13,6 +13,7 @@
 					<div class="form-group">
 				        <div class="col-sm-10 col-sm-offset-1">
 				        	<?php echo $this->session->flashdata('task_added'); ?>
+				        	<?php echo $this->session->flashdata('task_edit'); ?>
 				        </div>
 				    </div>
 
@@ -105,10 +106,10 @@
 												}
 											}
 										?>
-
-										<div id="paginacija">PAGINACIJA</div>
+										<div class="col-sm-offset-5"><?php echo $this->pagination->create_links(); ?></div>
 									</tbody>
 								</table>
+								<div class="col-sm-offset-5"><?php echo $this->pagination->create_links(); ?></div>
 							</div>
 
 					  	</div>

@@ -70,7 +70,7 @@ Class Tasks extends CI_Model {
 		}
 	}
 
-	function getTasks_paging($user_id,$limit, $start) {
+	function getTasks_paging($user_id, $limit, $start) {
 		$this->db->select('task_id, user_id, name, category, created, deadline, priority, completed');
 		$this->db->from('tasks');
 		$this->db->where('user_id', $user_id);
