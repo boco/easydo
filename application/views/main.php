@@ -2,8 +2,6 @@
 <?php include 'header.php'; ?>
 	<body>
 		<?php include 'navbar_online.php'; ?>
-		<?php include 'add_task_modal.php'; ?>
-
 
 	<div id="wrap">
 		<div class="about">
@@ -16,7 +14,7 @@
 						<div class="col-sm-8">
 							<h1>Hello, <?php echo $name; ?>! What is on today's schedule? </h1>
 							<p>Click below and quickly add some new tasks.</p>
-							<p><a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#addTaskModal">Add new task</a></p>
+							<p><?php echo anchor('task', 'Add a new task','class="btn btn-primary btn-lg"'); ?></p>
 						</div>
 					</div>
 				</div>
