@@ -107,35 +107,35 @@
 						<div class="well">
 							<h2 class="text-center">Add DoTask</h2>
 
-							<?php echo form_open('Task/verifyaddtask', array('class'=>'form-horizontal')); ?>
+							<?php echo form_open('edit_task/verifyedittask', array('class'=>'form-horizontal')); ?>
 								<div class="form-group">
-									<label class="col-lg-3 control-label" for="taskName">Task name</label>
+									<label class="col-lg-3 control-label" for="edit_name">Task name</label>
 									<div class="col-lg-8">
-										<input class="form-control" name="taskName" placeholder="Task name" type="text" value="<?php echo set_value('taskName'); ?>">
+										<input class="form-control" name="edit_name" placeholder="Task name" type="text" value="<?php echo set_value('edit_name', $edit_task->name); ?>">
 									</div>
 								</div>
 								<div class="form-group">
 							    	<div class="col-sm-8 col-sm-offset-3">
-							    		<span class="text-danger"><?php echo form_error('taskName'); ?></span>
+							    		<span class="text-danger"><?php echo form_error('edit_name'); ?></span>
 							    	</div>
 					    		</div>
 								
 								<div class="form-group">
-									<label class="col-lg-3 control-label" for="taskDescription">Description</label>
+									<label class="col-lg-3 control-label" for="edit_description">Description</label>
 									<div class="col-lg-8">
-										<textarea class="form-control" name="taskDescription" placeholder="Description" rows="4"><?php echo set_value('taskDescription'); ?></textarea>
+										<textarea class="form-control" name="edit_description" placeholder="Description" rows="4"><?php echo set_value('edit_description', $edit_task->description); ?></textarea>
 									</div>
 								</div>
 								<div class="form-group">
 							    	<div class="col-sm-8 col-sm-offset-3">
-							    		<span class="text-danger"><?php echo form_error('taskDescription'); ?></span>
+							    		<span class="text-danger"><?php echo form_error('edit_description'); ?></span>
 							    	</div>
 					    		</div>
 
 								<div class="form-group">
-									<label class="col-lg-3 control-label" for="taskCategory">Category</label>
+									<label class="col-lg-3 control-label" for="edit_category">Category</label>
 									<div class="col-lg-8">
-										<input list="category" class="form-control" name="taskCategory" placeholder="Category" type="text" value="<?php echo set_value('taskCategory'); ?>">
+										<input list="category" class="form-control" name="edit_category" placeholder="Category" type="text" value="<?php echo set_value('edit_category', $edit_task->category); ?>">
 										<datalist id="category">
 											<option value="Home">
 											<option value="Book">
@@ -153,37 +153,35 @@
 								</div>
 								<div class="form-group">
 							    	<div class="col-sm-8 col-sm-offset-3">
-							    		<span class="text-danger"><?php echo form_error('taskCategory'); ?></span>
+							    		<span class="text-danger"><?php echo form_error('edit_category'); ?></span>
 							    	</div>
 					    		</div>
 
 								<div class="form-group">
-									<label class="col-lg-3 control-label" for="taskDeadline">Deadline</label>
-									<div id="sandbox-container">
-									    <div class="input-daterange input-group col-sm-8" id="datepicker">
-									    	<input name="taskDeadline" class="input-sm form-control" type="text" placeholder="YYYY-mm-dd">
-									    </div> 
+									<label class="col-lg-3 control-label" for="edit_deadline">Deadline</label>
+									<div class="col-lg-8">
+										<input class="form-control" name="edit_deadline" placeholder="YYYY-mm-dd" type="datetime-local" value="<?php echo set_value('edit_deadline', $edit_task->deadline); ?>">
 									</div>
 								</div>
-
 								<div class="form-group">
 							    	<div class="col-sm-8 col-sm-offset-3">
-							    		<span class="text-danger"><?php echo form_error('taskDeadline'); ?></span>
+							    		<span class="text-danger"><?php echo form_error('edit_deadline'); ?></span>
 							    	</div>
 					    		</div>
 
 								<div class="form-group">
-									<label class="col-lg-3 control-label" for="taskPriority">Priority</label>
+									<label class="col-lg-3 control-label" for="edit_priority">Priority</label>
 									<div class="col-lg-8">
-										<input class="form-control" name="taskPriority" placeholder="Priority" type="text" value="<?php echo set_value('taskPriority'); ?>">
+										<input class="form-control" name="edit_priority" placeholder="Priority" type="text" value="<?php echo set_value('edit_priority', $edit_task->priority); ?>">
 										<!-- <button type="submit" class="btn btn-success pull-right" >Confirm</button> -->
 									</div>
 								</div>
 								<div class="form-group">
 							    	<div class="col-sm-8 col-sm-offset-3">
-							    		<span class="text-danger"><?php echo form_error('taskPriority'); ?></span>
+							    		<span class="text-danger"><?php echo form_error('edit_priority'); ?></span>
 							    	</div>
 					    		</div>
+					    		<input type="hidden" name="edit_task_id" value="<?php echo set_value('edit_task_id', $edit_task->task_id); ?>">
 
 					    		<div class="form-group">
 									<div class="col-sm-6 col-sm-offset-5">
@@ -240,5 +238,5 @@
 	
 	<!-- Custom JS -->
 	<script src="/includes/js/script.js"></script>
-	<script src=<?php echo base_url('/includes/js/datepicker.js');?>></script>
+
 </html>

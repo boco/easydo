@@ -71,7 +71,7 @@
 								<?php echo anchor('about_us_online', 'About us'); ?>
 							</li>
 							
-							<li class="active">
+							<li>
 								<!--<a href="#">Contact</a>-->
 								<?php echo anchor('contact_online', 'Contact'); ?>
 							</li>
