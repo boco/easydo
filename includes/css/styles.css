@@ -11,7 +11,7 @@ footer {
 	background: #333;
 	color: #eee;
 	font-size: 12px;
-	padding: 12px;
+	padding: 20px;
 }
 
 .boxicon {
@@ -92,15 +92,15 @@ body {
 }
 
 #slide1 {
-	background: url("/images/carousel_medium_01.jpg") top center no-repeat;
+	background: url("../../images/carousel_medium_01.jpg") top center no-repeat;
 }
 
 #slide2 {
-	background: url("/images/carousel_medium_02.jpg") top center no-repeat;
+	background: url("../../images/carousel_medium_02.jpg") top center no-repeat;
 }
 
 #slide3 {
-	background: url("/images/carousel_medium_03.jpg") top center no-repeat;
+	background: url("../../images/carousel_medium_03.jpg") top center no-repeat;
 }
 
 /* --------------------------------------
@@ -309,15 +309,15 @@ body {
 	}
 		
 	#slide1 {
-		background: url("/images/carousel_small_01.jpg") top center no-repeat;
+		background: url("../../images/carousel_small_01.jpg") top center no-repeat;
 	}
 
 	#slide2 {
-		background: url("/images/carousel_small_02.jpg") top center no-repeat;
+		background: url("../../images/carousel_small_02.jpg") top center no-repeat;
 	}
 
 	#slide3 {
-		background: url("/images/carousel_small_03.jpg") top center no-repeat;
+		background: url("../../images/carousel_small_03.jpg") top center no-repeat;
 	}
 	
 	
@@ -337,15 +337,15 @@ body {
 	}	
 		
 	#slide1 {
-		background: url("/images/carousel_large_01.jpg") top center no-repeat;
+		background: url("../../images/carousel_large_01.jpg") top center no-repeat;
 	}
 
 	#slide2 {
-		background: url("/images/carousel_large_02.jpg") top center no-repeat;
+		background: url("../../images/carousel_large_02.jpg") top center no-repeat;
 	}
 
 	#slide3 {
-		background: url("/images/carousel_large_03.jpg") top center no-repeat;
+		background: url("../../images/carousel_large_03.jpg") top center no-repeat;
 	}	
 	
 	#footer {
