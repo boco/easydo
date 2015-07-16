@@ -9,25 +9,35 @@
 				<h3 class="modal-title text-center">Add new DoTask</h3>
 			</div>
 			<div class="modal-body">
-				<form class="form-horizontal">
+				<?php echo form_open('Task/verifyaddtask', array('class'=>'form-horizontal')); ?>
 					<div class="form-group">
-						<label class="col-lg-2 col-lg-offset-1 control-label" for="taskName">Task name</label>
+						<label class="col-lg-3 control-label" for="taskName">Task name</label>
 						<div class="col-lg-8">
-							<input class="form-control" id="taskName" placeholder="Task name" type="text">
+							<input class="form-control" name="taskName" placeholder="Task name" type="text" value="<?php echo set_value('taskName'); ?>">
 						</div>
 					</div>
+					<div class="form-group">
+				    	<div class="col-sm-8 col-sm-offset-3">
+				    		<span class="text-danger"><?php echo form_error('taskName'); ?></span>
+				    	</div>
+		    		</div>
 					
 					<div class="form-group">
-						<label class="col-lg-2 col-lg-offset-1 control-label" for="taskDescription">Description</label>
+						<label class="col-lg-3 control-label" for="taskDescription">Description</label>
 						<div class="col-lg-8">
-							<textarea class="form-control" id="taskDescription" placeholder="Description" rows="4"></textarea>
+							<textarea class="form-control" name="taskDescription" placeholder="Description" rows="4"><?php echo set_value('taskDescription'); ?></textarea>
 						</div>
 					</div>
+					<div class="form-group">
+				    	<div class="col-sm-8 col-sm-offset-3">
+				    		<span class="text-danger"><?php echo form_error('taskDescription'); ?></span>
+				    	</div>
+		    		</div>
 
 					<div class="form-group">
-						<label class="col-lg-2 col-lg-offset-1 control-label" for="taskCategory">Category</label>
+						<label class="col-lg-3 control-label" for="taskCategory">Category</label>
 						<div class="col-lg-8">
-							<input list="category" class="form-control" id="taskCategory" placeholder="Category" type="text">
+							<input list="category" class="form-control" name="taskCategory" placeholder="Category" type="text" value="<?php echo set_value('taskCategory'); ?>">
 							<datalist id="category">
 								<option value="Home">
 								<option value="Book">
@@ -43,23 +53,47 @@
 							</datalist>
 						</div>
 					</div>
+					<div class="form-group">
+				    	<div class="col-sm-8 col-sm-offset-3">
+				    		<span class="text-danger"><?php echo form_error('taskCategory'); ?></span>
+				    	</div>
+		    		</div>
 
 					<div class="form-group">
-						<label class="col-lg-2 col-lg-offset-1 control-label" for="taskDeadline">Deadline</label>
+						<label class="col-lg-3 control-label" for="taskDeadline">Deadline</label>
 						<div class="col-lg-8">
-							<input class="form-control" id="taskDeadline" placeholder="Deadline" type="text">
+							<input class="form-control" name="taskDeadline" placeholder="Deadline" type="datetime-local" value="<?php echo set_value('taskDeadline'); ?>">
+						</div>
+					</div>
+					<div class="form-group">
+				    	<div class="col-sm-8 col-sm-offset-3">
+				    		<span class="text-danger"><?php echo form_error('taskDeadline'); ?></span>
+				    	</div>
+		    		</div>
+
+					<div class="form-group">
+						<label class="col-lg-3 control-label" for="taskPriority">Priority</label>
+						<div class="col-lg-8">
+							<input class="form-control" name="taskPriority" placeholder="Priority" type="text" value="<?php echo set_value('taskPriority'); ?>"><br/>
+							<!-- <button type="submit" class="btn btn-success pull-right" >Confirm</button> -->
+						</div>
+					</div>
+					<div class="form-group">
+				    	<div class="col-sm-8 col-sm-offset-3">
+				    		<span class="text-danger"><?php echo form_error('taskPriority'); ?></span>
+				    	</div>
+		    		</div>
+
+					<div class="form-group">
+			    		<div class="col-lg-8 col-lg-offset-3">
+							<button type="submit" class="btn btn-success pull-right" >Confirm</button>
 						</div>
 					</div>
 
-					<div class="form-group">
-						<label class="col-lg-2 col-lg-offset-1 control-label" for="taskPriority">Priority</label>
-						<div class="col-lg-8">
-							<input class="form-control" id="taskPriority" placeholder="Priority" type="text"><br/>
-							<button class="btn btn-success pull-right" type="submit">Confirm</button>
-						</div>
-					</div>
 				</form>
+				
 			</div>
+
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>

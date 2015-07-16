@@ -39,7 +39,7 @@
 					
 					<div class="navbar-collapse collapse navbar-responsive-collapse">
 						<ul class="nav navbar-nav">
-							<li>
+							<li class="active">
 								<?php echo anchor('main', 'Home'); ?>
 							</li>
 
@@ -51,7 +51,7 @@
 										<?php echo anchor('my_profile', 'My Profile'); ?>
 									</li>
 
-									<li class="active">
+									<li>
 										<?php echo anchor('overview', 'Overview'); ?>
 									</li>
 
@@ -104,116 +104,100 @@
 				</div>
 			</nav>
 
-			<?php include 'add_task_modal.php'; ?>
-
+			<!-- TUKAJ PRIDE TASK -->
 			<div class="container" id="main">
 				<div class="row about">
-
-					<div class="form-group">
-				        <div class="col-sm-10 col-sm-offset-1">
-				        	<?php echo $this->session->flashdata('task_added'); ?>
-				        </div>
-				    </div>
-
-					<div class="col-sm-10 col-sm-offset-1">
+					<div class="col-sm-6 col-sm-offset-3">
 						<div class="well">
-							<h2 class="text-center">Overview</h2>
-							<div class="table-responsive">
-								<table class="table table-hover">
-									<caption class="text-center">Overview of all tasks</caption>
-									<thead>
-										<tr>
-											<th>Task name</th>
-											<th>Category</th>
-											<th>Created</th>
-											<th>Deadline</th>
-											<th>Priority</th>
-											<th>Status</th>
-											<th colspan="3">Actions</th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php
-											if($tasks){
-												foreach($tasks as $row) {
-													if($row->completed == 1){
-														echo '<tr class="success">';
-													}elseif(strtotime(date('Y-m-d')) > strtotime($row->deadline) && $row->completed == 0){
-														echo '<tr class="danger">';
-													}else{
-														echo '<tr class="warning">';
-													}
-													echo '<td>'.$row->name.'</td>';
-													echo '<td>'.$row->category.'</td>';
-													echo '<td>'.date('d-m-Y',strtotime($row->created)).'</td>';
-													echo '<td>'.date('d-m-Y',strtotime($row->deadline)).'</td>';
-													echo '<td>'.$row->priority.'</td>';
-													
-													if($row->completed == 1){
-														echo '<td>Done</td>';
-														echo '<td>';
+							<h2 class="text-center">Add DoTask</h2>
 
-														echo form_open("overview/edit");													
-														echo '<input type="hidden" name="edit_task" value="'.$row->task_id.'" />';
-														echo '<button type="submit" name="edit" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>';
-														echo form_close();
+							<?php echo form_open('Task/verifyaddtask', array('class'=>'form-horizontal')); ?>
+								<div class="form-group">
+									<label class="col-lg-3 control-label" for="taskName">Task name</label>
+									<div class="col-lg-8">
+										<input class="form-control" name="taskName" placeholder="Task name" type="text" value="<?php echo set_value('taskName'); ?>">
+									</div>
+								</div>
+								<div class="form-group">
+							    	<div class="col-sm-8 col-sm-offset-3">
+							    		<span class="text-danger"><?php echo form_error('taskName'); ?></span>
+							    	</div>
+					    		</div>
+								
+								<div class="form-group">
+									<label class="col-lg-3 control-label" for="taskDescription">Description</label>
+									<div class="col-lg-8">
+										<textarea class="form-control" name="taskDescription" placeholder="Description" rows="4"><?php echo set_value('taskDescription'); ?></textarea>
+									</div>
+								</div>
+								<div class="form-group">
+							    	<div class="col-sm-8 col-sm-offset-3">
+							    		<span class="text-danger"><?php echo form_error('taskDescription'); ?></span>
+							    	</div>
+					    		</div>
 
-														echo form_open("overview/delete");
-														echo '<input type="hidden" name="delete_task" value="'.$row->task_id.'" />';
-														echo '<button type="submit" name="delete" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>';
-														echo form_close();			
+								<div class="form-group">
+									<label class="col-lg-3 control-label" for="taskCategory">Category</label>
+									<div class="col-lg-8">
+										<input list="category" class="form-control" name="taskCategory" placeholder="Category" type="text" value="<?php echo set_value('taskCategory'); ?>">
+										<datalist id="category">
+											<option value="Home">
+											<option value="Book">
+											<option value="Movie">
+											<option value="Music">
+											<option value="Person">
+											<option value="Food">
+											<option value="Idea">
+											<option value="Shopping">
+											<option value="School">
+											<option value="Job">
+											<option value="Other">
+										</datalist>
+									</div>
+								</div>
+								<div class="form-group">
+							    	<div class="col-sm-8 col-sm-offset-3">
+							    		<span class="text-danger"><?php echo form_error('taskCategory'); ?></span>
+							    	</div>
+					    		</div>
 
-														echo '</td>';
-													}elseif(strtotime(date('Y-m-d')) > strtotime($row->deadline) && $row->completed == 0){
-														echo '<td>Missed</td>';
-														echo '<td>';
+								<div class="form-group">
+									<label class="col-lg-3 control-label" for="taskDeadline">Deadline</label>
+									<div class="col-lg-8">
+										<input class="form-control" name="taskDeadline" placeholder="Deadline" type="datetime-local" value="<?php echo set_value('taskDeadline'); ?>">
+									</div>
+								</div>
+								<div class="form-group">
+							    	<div class="col-sm-8 col-sm-offset-3">
+							    		<span class="text-danger"><?php echo form_error('taskDeadline'); ?></span>
+							    	</div>
+					    		</div>
 
-														echo form_open("overview/edit");													
-														echo '<input type="hidden" name="edit_task" value="'.$row->task_id.'" />';
-														echo '<button type="submit" name="edit" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>';
-														echo form_close();
+								<div class="form-group">
+									<label class="col-lg-3 control-label" for="taskPriority">Priority</label>
+									<div class="col-lg-8">
+										<input class="form-control" name="taskPriority" placeholder="Priority" type="text" value="<?php echo set_value('taskPriority'); ?>">
+										<!-- <button type="submit" class="btn btn-success pull-right" >Confirm</button> -->
+									</div>
+								</div>
+								<div class="form-group">
+							    	<div class="col-sm-8 col-sm-offset-3">
+							    		<span class="text-danger"><?php echo form_error('taskPriority'); ?></span>
+							    	</div>
+					    		</div>
 
-														echo form_open("overview/delete");
-														echo '<input type="hidden" name="delete_task" value="'.$row->task_id.'" />';
-														echo '<button type="submit" name="delete" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>';
-														echo form_close();
-														
-														echo '</td>';
-													}else{
-														echo '<td>Pending</td>';
-														echo '<td class="row no-gutters">';
+					    		<div class="form-group">
+									<div class="col-sm-6 col-sm-offset-5">
+										<button type="submit" class="btn btn-success">Confirm</button>
+									</div>
+								</div>
+							<?php form_close(); ?>
 
-														echo form_open("overview/done",'class="col-sm-4"');													
-														echo '<input type="hidden" name="done_task" value="'.$row->task_id.'" />';
-														echo '<button type="submit" name="done" class="btn btn-success"><span class="glyphicon glyphicon-check"></span></button>';
-														echo form_close();
-
-														echo form_open("overview/edit",'class="col-sm-4"');
-														echo '<input type="hidden" name="edit_task" value="'.$row->task_id.'" />';
-														echo '<button type="submit" name="edit" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button>';
-														echo form_close();
-
-														echo form_open("overview/delete",'class="col-sm-4"');
-														echo '<input type="hidden" name="delete_task" value="'.$row->task_id.'" />';
-														echo '<button type="submit" name="delete" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>';
-														echo form_close();
-
-														echo '</td>';
-													}
-													echo '</tr>';
-												}
-											}
-										?>
-
-										<div id="paginacija">PAGINACIJA</div>
-									</tbody>
-								</table>
-							</div>
-
-					  	</div>
+						</div>
 					</div>
 				</div>
 			</div>
+
 		</div>
 
 	</body>

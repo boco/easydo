@@ -3,66 +3,64 @@
 <?php include 'header.php'; ?>
 <body>
 	<?php include 'navbar_online.php'; ?>
+	<?php include 'add_task_modal.php'; ?>
 
 	<div class="container " id="wrap">
 		<div class="row about" >
 
 			<div class="col-md-12">
 				<div class="jumbotron">
-				<div class="container">
-					<div class="row">
-
+					<div class="container">
+						<div class="row">
 							<h1>Status record</h1>
 							<p>How are you doing.</p>
-
-					</div>
-					<div class="row">
-						<div class="col-sm-3">
-							<h1>					
-								<span class=" label label-success boxicon">
-									<span class="glyphicon glyphicon-ok">
-									</span>
-								</span>
-								&nbsp;7
-							</h1>
-							<h3>Completed</h3>
 						</div>
+						<div class="row">
+							<div class="col-sm-3">
+								<h1>					
+									<span class="label label-success boxicon">
+										<span class="glyphicon glyphicon-ok">
+										</span>
+									</span>
+									&nbsp;7
+								</h1>
+								<h3>Completed</h3>
+							</div>
 
-						<div class="col-sm-3">
-							<h1>					
-								<span class=" label label-danger boxicon">
-									<span class="glyphicon glyphicon-remove">
+							<div class="col-sm-3">
+								<h1>					
+									<span class=" label label-danger boxicon">
+										<span class="glyphicon glyphicon-remove">
+										</span>
 									</span>
-								</span>
-								&nbsp;21
-							</h1>
-							<h3>Uncompleted</h3>
-						</div>
+									&nbsp;21
+								</h1>
+								<h3>Uncompleted</h3>
+							</div>
 
-						<div class="col-sm-3">
-							<h1>					
-								<span class=" label label-warning boxicon">
-									<span class="glyphicon glyphicon-play">
+							<div class="col-sm-3">
+								<h1>					
+									<span class=" label label-warning boxicon">
+										<span class="glyphicon glyphicon-play">
+										</span>
 									</span>
-								</span>
-								&nbsp;4
-							</h1>
-							<h3>In progress</h3>
-						</div>
-						<div class="col-sm-3">
-							<h1>					
-								<span class=" label label-default boxicon">
-									<span class="glyphicon glyphicon-repeat">
-									</span>
-								</span><b>
-								&nbsp;4</b>
-							</h1>
-							<h3>Total</h3>
+									&nbsp;4
+								</h1>
+								<h3>In progress</h3>
+							</div>
+							<div class="col-sm-3">
+								<h1>					
+									<span class=" label label-default boxicon">
+										<span class="glyphicon glyphicon-repeat">
+										</span>
+									</span><b>
+									&nbsp;4</b>
+								</h1>
+								<h3>Total</h3>
+							</div>
 						</div>
 					</div>
 				</div>
-		</div>
-
 			</div>
 
 			<div class="col-md-12">
@@ -179,6 +177,7 @@
 						</form>
 					</div>
 				</div>
+
 				<div class="col-md-6">
 					<div class="well what">
 						<h3>
@@ -213,7 +212,7 @@
 									<div class="btn-group">
 									    <button class="btn btn-sm btn-default">YES</button>
 									    <button class="btn btn-sm btn-primary active">NO&nbsp;</button>
-								</div>
+									</div>
 								</div>
 							</div>
 

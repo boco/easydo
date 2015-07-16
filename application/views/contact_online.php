@@ -40,57 +40,55 @@
 						
 						<div class="navbar-collapse collapse navbar-responsive-collapse">
 							<ul class="nav navbar-nav">
-								<li>
-									<?php echo anchor('main', 'Home'); ?>
-								</li>
+							<li>
+								<?php echo anchor('main', 'Home'); ?>
+							</li>
 
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown">My EasyDo <strong class="caret"></strong></a>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">My EasyDo <strong class="caret"></strong></a>
 
-									<ul class="dropdown-menu">
-										<li>
-											<?php echo anchor('my_profile', 'My Profile'); ?>
-										</li>
+								<ul class="dropdown-menu">
+									<li>
+										<?php echo anchor('my_profile', 'My Profile'); ?>
+									</li>
 
-										<li>
-											<?php echo anchor('overview', 'Overview'); ?>
-										</li>
+									<li>
+										<?php echo anchor('overview', 'Overview'); ?>
+									</li>
 
-										<li>
-											<a href="#" data-toggle="modal" data-target="#addTaskModal">Add DoTask</a>
-										</li>
+									<li>
+										<a href="#" data-toggle="modal" data-target="#addTaskModal">Add DoTask</a>
+									</li>
 
-										<li>
-											<?php echo anchor('activity_chart', 'Activity Chart'); ?>
-										</li>
-									</ul>
-								</li>
-								
-								<li>
-									<!--<a href="#">About us</a>-->
-									<?php echo anchor('about_us_online', 'About us'); ?>
-								</li>
-								
-								<li class="active">
-									<!--<a href="#">Contact</a>-->
-									<?php echo anchor('contact_online', 'Contact'); ?>
-								</li>
+									<li>
+										<?php echo anchor('activity_chart', 'Activity Chart'); ?>
+									</li>
+								</ul>
+							</li>
+							
+							<li>
+								<!--<a href="#">About us</a>-->
+								<?php echo anchor('about_us_online', 'About us'); ?>
+							</li>
+							
+							<li class="active">
+								<!--<a href="#">Contact</a>-->
+								<?php echo anchor('contact_online', 'Contact'); ?>
+							</li>
 
-							</ul>
+						</ul>
 
 							<div class="nav navbar-nav navbar-right login hidden-xs">
 								<!--<a class="btn btn-success" href="#">Sign up</a>
 								<a class="btn btn-primary" href="#">Login</a>-->
-								<?php echo anchor('sign_up', 'Sign up', 'class="btn btn-success"'); ?>
-								<?php echo anchor('login', 'Login', 'class="btn btn-primary"'); ?>
+								<?php echo anchor('main/logout', 'Logout', 'class="btn btn-danger"'); ?>
 							</div>
 							
 							<!-- Vidno samo na majhnih napravah < 768px -->
 							<div class="well well-small visible-xs">
 								<!--<a class="btn btn-success btn-block" href="#">Sign up</a>
 								<a class="btn btn-primary btn-block" href="#">Login</a>-->
-								<?php echo anchor('sign_up', 'Sign up', 'class="btn btn-success btn-block"'); ?>
-								<?php echo anchor('login', 'Login', 'class="btn btn-primary  btn-block"'); ?>
+								<?php echo anchor('main/logout', 'Logout', 'class="btn btn-danger btn-block"'); ?>
 							</div>	
 						</div>
 					</div>
@@ -102,46 +100,67 @@
 						<div class="well">
 							<h2 class="text-center">Contact</h2>
 
-							<form class="form-horizontal" role="form" method="post" action="index.php">
+							<?php echo form_open('contact_online/verifycontact', array('class'=>'form-horizontal')); ?>
 							    <div class="form-group">
 							        <label for="name" class="col-sm-2 control-label">Name</label>
 							        <div class="col-sm-9">
-							            <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="">
+							            <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="<?php echo set_value('name'); ?>" >
 							        </div>
 							    </div>
+							    <div class="form-group">
+							    	<div class="col-sm-9 col-sm-offset-2">
+							    		<span class="text-danger"><?php echo form_error('name'); ?></span>
+						    		</div>
+					    		</div>
+
 							    <div class="form-group">
 							        <label for="email" class="col-sm-2 control-label">Email</label>
 							        <div class="col-sm-9">
-							            <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="">
+							            <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" value="<?php echo set_value('email'); ?>">
 							        </div>
 							    </div>
+							    <div class="form-group">
+							    	<div class="col-sm-9 col-sm-offset-2">
+							    		<span class="text-danger"><?php echo form_error('email'); ?></span>
+							    	</div>
+					    		</div>
+
 							    <div class="form-group">
 							        <label for="message" class="col-sm-2 control-label">Message</label>
 							        <div class="col-sm-9">
-							            <textarea class="form-control" rows="4" name="message"></textarea>
+							            <textarea class="form-control" rows="4" id="message" name="message" placeholder="Your message..."><?php echo set_value('message'); ?></textarea>
 							        </div>
 							    </div>
 							    <div class="form-group">
-							        <label for="human" class="col-sm-2 control-label">2 + 3 = ?</label>
+							    	<div class="col-sm-9 col-sm-offset-2">
+							    		<span class="text-danger"><?php echo form_error('message'); ?></span>
+							    	</div>
+					    		</div>
+
+							    <div class="form-group">
+							        <label for="sum" class="col-sm-2 control-label">2 + 3 = ?</label>
 							        <div class="col-sm-9">
-							            <input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
+							            <input type="text" class="form-control" id="sum" name="sum" placeholder="Your Answer" value="<?php echo set_value('sum'); ?>">
 							        </div>
 							    </div>
+							    <div class="form-group">
+							    	<div class="col-sm-9 col-sm-offset-2">
+							    		<span class="text-danger"><?php echo form_error('sum'); ?></span>
+							    	</div>
+					    		</div>
+
 							    <div class="form-group">
 							        <div class="col-sm-9 col-sm-offset-2">
 							            <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
 							        </div>
 							    </div>
+							    
 							    <div class="form-group">
 							        <div class="col-sm-9 col-sm-offset-2">
-
- 										<!-- <?php echo $result; ?> -->
+							        	<?php echo $this->session->flashdata('msg'); ?>
 							        </div>
 							    </div>
-							</form>
-
-
-
+							<?php form_close(); ?>
 					  	</div>
 					</div>
 				</div>
@@ -165,7 +184,7 @@
 						<ul class="list-unstyled">
 							<li><?php echo anchor('main', 'Home'); ?></li>
 							<li><?php echo anchor('about_us_online', 'About us'); ?></li>
-							<li><?php echo anchor('contact_online', 'Contact'); ?></li>
+							<li><?php echo anchor('contact_onfline', 'Contact'); ?></li>
 						</ul>
 					</div>
 										

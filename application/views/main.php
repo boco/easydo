@@ -11,15 +11,13 @@
 						<img src=<?php echo base_url('/images/Utilities.png');?> class="img-responsive" alt="Just do it" height="350" width="350">
 					</div>
 					<div class="col-sm-8">
-						<h1>Hello, world! What is on today's schedule? </h1>
+						<h1>Hello, <?php echo $name; ?>! What is on today's schedule? </h1>
 						<p>Click below and quickly add some new tasks.</p>
 						<p><a class="btn btn-primary btn-lg" href="#" role="button" data-toggle="modal" data-target="#addTaskModal">Add new task</a></p>
 					</div>
 				</div>
 			</div>
 		</div>
-
-
 
 		<div class="container" id="main">
 			<div class="row" id="moreInfo">
@@ -30,16 +28,25 @@
 							<div class="well priority-look">
 								<h3>Priority look</h3>
 								<ul>
+									<?php
+										if($tasks){
+											
+											$i=0;
+											foreach($tasks as $row){ 
+											if($i==$settings) break;
+									?>
 									<li>
-										<dt>asd</dt>
-										<dd>Priority: asd</dd>
+										<dt><?php echo $row->name; ?></dt>
+										<dd>Priority: <?php echo $row->priority; ?></dd>
 									</li>
-									<li>
-										<dt>asd</span></dt>
-										<dd>Priority: 23</dd>
-									</li>
+									<?php
+											$i++;
+											}
+										}else{
+											echo '<p>Add some new tasks</p>';
+										}
+									?>
 								</ul>
-								
 							</div>
 						</div>
 
@@ -57,29 +64,33 @@
 												<div class="carousel slide" id="myCarousel2">
 													<!-- Carousel items -->
 													<div class="carousel-inner">
-														<div class="active item">
-															<dl>
-																<dt>ime 1</dt>
-																<dd>Deadline: asd</dd>
-																<dd>Priority: asd</dd>
-																<dd>asds</dd>
-															</dl>
-														</div>
-														<div class="item">
-															test 2
-														</div>
-														<div class="item">
-															test 3
-														</div>
-														<div class="item">
-															test 4
-														</div>
-														<div class="item">
-															test 5
-														</div>
-														<div class="item">
-															test 6
-														</div>
+
+														<?php
+															if($tasks){
+																$i=0;
+																foreach($tasks as $row){ 
+																	if($i==$settings) break;
+
+																	if($i == 0){
+																		echo '<div class="active item">';
+																	}else{
+																		echo '<div class="item">';
+																	}
+														?>
+																<dl>
+																	<dt><?php echo $row->name; ?></dt>
+																	<dd>Deadline: <?php echo date('d.m.Y',strtotime($row->deadline)); ?></dd>
+																	<dd>Priority: <?php echo $row->priority; ?></dd>
+																	<dd><?php echo $row->description; ?></dd>
+																</dl>
+															</div>
+														<?php
+																	$i++;
+																}
+															}else{
+																echo '<p>Add some new tasks</p>';
+															}
+														?>	
 													</div>
 												</div>
 
