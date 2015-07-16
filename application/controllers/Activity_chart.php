@@ -10,4 +10,5 @@ class Activity_chart extends CI_Controller {
 	public function index() {
 		$this->load->view('activity_chart');
 	}
+
 }

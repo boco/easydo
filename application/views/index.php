@@ -69,7 +69,7 @@
 					<div class="col-sm-6">
 						<div class="well moreInfo">
 							<div class="img-center">
-								<img src="images/Alinof.png" alt="Bootstrap 3" class="img-thumbnail" width="200" height="200">
+								<img src="../images/Alinof.png" alt="Bootstrap 3" class="img-thumbnail" width="200" height="200">
 							</div>
 							
 							<div>
@@ -95,7 +95,7 @@
 					<div class="col-sm-6">
 						<div class="well">
 							<div class="img-center">
-								<img src="images/background.png" alt="Bootstrap 3" class="img-thumbnail" width="400" height="200">
+								<img src="../images/background.png" alt="Bootstrap 3" class="img-thumbnail" width="400" height="200">
 							</div>
 							
 							<h4>All available features this application offers:</h4>
@@ -111,8 +111,8 @@
 			</div>
 		</div>
 	</div>
+<?php include 'footer_offline.php'; ?>
 </body>
 
-<?php include 'footer_offline.php'; ?>
 <?php include 'includeJs.php'; ?>
 </html>

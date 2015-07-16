@@ -8,6 +8,7 @@ class Task extends CI_Controller {
 		$this->load->model('users');
     }
 
+<<<<<<< HEAD
     public function index() {
 		$this->load->view('task');
 	}

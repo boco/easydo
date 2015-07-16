@@ -1,13 +1,11 @@
 <html>
-
-<?php include 'header.php'; ?>
+	<?php include 'header.php'; ?>
 <body>
 	<?php include 'navbar_online.php'; ?>
 	<?php include 'add_task_modal.php'; ?>
 
 	<div class="container " id="wrap">
-		<div class="row about" >
-
+		<div class="row about">
 			<div class="col-md-12">
 				<div class="jumbotron">
 					<div class="container">
@@ -61,6 +59,7 @@
 						</div>
 					</div>
 				</div>
+				
 			</div>
 
 			<div class="col-md-12">
@@ -95,87 +94,38 @@
 								</dl>
 							</form>
 						</div>
-				</div>
-				<div class="col-md-6">
-					<div class="well what">
-						<h3>
-							<div class="pull-right">
-								<div class="btn-group">
-									<button type="button" class="btn-xs btn-default" aria-label="Edit">
-										<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;Edit
-									</button>
-								</div>
-							</div>
-						Settings</h3>
-						<form role="form">
-							<dl>
-								<dt>
-									Displayed daily tasks
-								</dt>
-								<dd>
-									5
-								</dd>
-								<dt>
-									Send email notifications
-								</dt>
-								<dd>
-									NO
-								</dd>
-							</dl>
-						</form>
 					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-6">
-					<div class="well what">
-						<h3>
-							<div class="pull-right">
-								<div class="btn-group">
-									<button type="button" class="btn-xs btn-success" aria-label="Save">
-										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;Save
-									</button>
+					<div class="col-md-6">
+						<div class="well what">
+							<h3>
+								<div class="pull-right">
+									<div class="btn-group">
+										<button type="button" class="btn-xs btn-default" aria-label="Edit">
+											<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;Edit
+										</button>
+									</div>
 								</div>
-								<div class="btn-group">
-									<button type="button" class="btn-xs btn-danger" aria-label="Cancel">
-										<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;Cancel
-									</button>
-								</div>
+								Settings</h3>
+								<form role="form">
+									<dl>
+										<dt>
+											Displayed daily tasks
+										</dt>
+										<dd>
+											5
+										</dd>
+										<dt>
+											Send email notifications
+										</dt>
+										<dd>
+											NO
+										</dd>
+									</dl>
+								</form>
 							</div>
-						My profile</h3>
-
-
-						<form role="form">
-							<div class="form-group">
-								<label for="userEmail">
-									Email address
-								</label>
-								<input type="email" class="form-control" id="userEmail" value="dummy@email.com"/> 
-							</div>
-							<div class="form-group">
-
-								<label for="userUsername">
-									Username
-								</label>
-								<input type="input" class="form-control" id="userUsername"  value="Dumbster999"/>
-							</div>
-							<div class="form-group">
-
-								<label for="userPassword">
-									Password (leave empty if unchanged)
-								</label>
-								<input type="password" class="form-control" id="userPassword" />
-							</div>
-							<div class="form-group">
-
-								<label for="userPasswordRepeat">
-									Password repeat
-								</label>
-								<input type="password" class="form-control" id="userPasswordRepeat" />
-							</div>
-						</form>
+						</div>
 					</div>
+					
 				</div>
 
 				<div class="col-md-6">
@@ -195,15 +145,96 @@
 							</div>
 						Settings</h3>
 
+					<div class="row">
+						<div class="col-md-6">
+							<div class="well what">
+								<h3>
+									<div class="pull-right">
+										<div class="btn-group">
+											<button type="button" class="btn-xs btn-success" aria-label="Save">
+												<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;Save
+											</button>
+										</div>
+										<div class="btn-group">
+											<button type="button" class="btn-xs btn-danger" aria-label="Cancel">
+												<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;Cancel
+											</button>
+										</div>
+									</div>
+									My profile</h3>
 
-						<form role="form">
-							<div class="form-group">
-								<label for="userEmail">
-									Displayed daily tasks
-								</label>
-								<input type="number" class="form-control" id="userEmail" value="4"/> 
+
+									<form role="form">
+										<div class="form-group">
+											<label for="userEmail">
+												Email address
+											</label>
+											<input type="email" class="form-control" id="userEmail" value="dummy@email.com"/> 
+										</div>
+										<div class="form-group">
+
+											<label for="userUsername">
+												Username
+											</label>
+											<input type="input" class="form-control" id="userUsername"  value="Dumbster999"/>
+										</div>
+										<div class="form-group">
+
+											<label for="userPassword">
+												Password (leave empty if unchanged)
+											</label>
+											<input type="password" class="form-control" id="userPassword" />
+										</div>
+										<div class="form-group">
+
+											<label for="userPasswordRepeat">
+												Password repeat
+											</label>
+											<input type="password" class="form-control" id="userPasswordRepeat" />
+										</div>
+									</form>
+								</div>
 							</div>
-							<div class="form-group">
+							<div class="col-md-6">
+								<div class="well what">
+									<h3>
+										<div class="pull-right">
+											<div class="btn-group">
+												<button type="button" class="btn-xs btn-success" aria-label="Save">
+													<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>&nbsp;Save
+												</button>
+											</div>
+											<div class="btn-group">
+												<button type="button" class="btn-xs btn-danger" aria-label="Cancel">
+													<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>&nbsp;Cancel
+												</button>
+											</div>
+										</div>
+										Settings</h3>
+
+
+										<form role="form">
+											<div class="form-group">
+												<label for="userEmail">
+													Displayed daily tasks
+												</label>
+												<input type="number" class="form-control" id="userEmail" value="4"/> 
+											</div>
+											<div class="form-group">
+
+												<label>
+													Send email notifications
+												</label>
+												<div class="btn-toggle">
+													<div class="btn-group">
+														<button class="btn btn-sm btn-default">YES</button>
+														<button class="btn btn-sm btn-primary active">NO&nbsp;</button>
+													</div>
+												</div>
+											</div>
+
+										</form>
+									</div>
 
 								<label>
 									Send email notifications
@@ -213,22 +244,14 @@
 									    <button class="btn btn-sm btn-default">YES</button>
 									    <button class="btn btn-sm btn-primary active">NO&nbsp;</button>
 									</div>
+
 								</div>
 							</div>
-
-						</form>
-					</div>
-
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-</div>
+			</body>
 
-</body>
-
-<?php include 'footer_online.php'; ?>
-<?php include 'includeJs.php'; ?>
-
+	<?php include 'footer_online.php'; ?>
+	<?php include 'includeJs.php'; ?>
 </html>

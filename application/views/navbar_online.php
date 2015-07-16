@@ -34,7 +34,7 @@
 						</li>
 
 						<li>
-							<a href="#" data-toggle="modal" data-target="#addTaskModal">Add DoTask</a>
+							<?php echo anchor('task', 'Add DoTask'); ?>
 						</li>
 
 						<li>

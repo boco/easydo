@@ -10,7 +10,6 @@ class Contact_offline extends CI_Controller {
 		$this->load->view('contact_offline');
 	}
 
-
 	function verifycontact(){
 		$this->form_validation->set_rules('name', 'Name', 'trim|htmlspecialchars|stripslashes|required|callback_alpha_space_only');
 		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|required|callback_check_email');
@@ -76,5 +75,4 @@ class Contact_offline extends CI_Controller {
             return TRUE;
         }
     }
-
 }

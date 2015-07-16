@@ -7,7 +7,7 @@
 				
 				<div class="col-sm-4">
 					<h6>About Us</h6>
-					<p>Narwhal bespoke Odd Future tofu post-ironic selvage. Church-key gentrify four loko biodiesel squid, tofu cornhole beard you probably haven't heard of them wolf ugh flannel paleo banjo.</p>
+					<p>We are small team consisted from two students from University of Primorska, Faculty of Mathematics, Natural Sciences and Informational Technologies. This site is part of project seminar in a course. </p>
 				</div>
 				
 				<div class="col-sm-2">
@@ -18,7 +18,7 @@
 						<li><?php echo anchor('contact_online', 'Contact'); ?></li>
 					</ul>
 				</div>
-									
+									 	
 			</div>
 		</div>
 	</footer>
