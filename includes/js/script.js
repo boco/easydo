@@ -1,6 +1,6 @@
-/*
+$(document).ready(function () {	
 
-My Custom JS
-============
-
-*/
+	//$("#datepicker").datepicker(
+	$("#datepicker").datepicker({ dateFormat: 'dd.mm.yy' });
+		
+});

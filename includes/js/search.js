@@ -23,4 +23,5 @@ $(document).ready(function () {
 	$('#searchbar').blur(function(){
 		$('#results').hide();
 	});
+		
 });

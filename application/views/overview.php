@@ -47,8 +47,8 @@
 													}
 													echo '<td>'.$row->name.'</td>';
 													echo '<td>'.$row->category.'</td>';
-													echo '<td>'.date('d-m-Y',strtotime($row->created)).'</td>';
-													echo '<td>'.date('d-m-Y',strtotime($row->deadline)).'</td>';
+													echo '<td>'.date('d.m.Y',strtotime($row->created)).'</td>';
+													echo '<td>'.date('d.m.Y',strtotime($row->deadline)).'</td>';
 													echo '<td>'.$row->priority.'</td>';
 													
 													if($row->completed == 1){

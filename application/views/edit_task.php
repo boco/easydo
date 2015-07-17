@@ -14,6 +14,7 @@
 		
 		<!-- Custom CSS -->
 		<link href="/includes/css/styles.css" rel="stylesheet">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		
 		<!-- Include Modernizr in the head, before any other Javascript -->
 		<script src="/includes/js/modernizr-2.6.2.min.js"></script>		
@@ -157,11 +158,11 @@
 							    	</div>
 					    		</div>
 
-								<div class="form-group">
+					    		<div class="form-group">
 									<label class="col-lg-3 control-label" for="edit_deadline">Deadline</label>
-									<div class="col-lg-8">
-										<input class="form-control" name="edit_deadline" placeholder="YYYY-mm-dd" type="datetime-local" value="<?php echo set_value('edit_deadline', $edit_task->deadline); ?>">
-									</div>
+								    <div class="col-sm-8" >
+								    	<input name="edit_deadline" id="datepicker" class="form-control" type="text" placeholder="dd.mm.YYYY" value="<?php echo set_value('edit_deadline', date('d.m.Y', strtotime($edit_task->deadline))); ?>">
+								    </div> 
 								</div>
 								<div class="form-group">
 							    	<div class="col-sm-8 col-sm-offset-3">
@@ -237,6 +238,8 @@
 	<script src="/bootstrap/js/bootstrap.min.js"></script>
 	
 	<!-- Custom JS -->
-	<script src="/includes/js/script.js"></script>
+	<script src=<?php echo base_url('/includes/js/script.js');?>></script>	
+  	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 </html>

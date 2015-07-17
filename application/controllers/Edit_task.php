@@ -27,7 +27,7 @@ class Edit_task extends CI_Controller {
 			$task_name=$this->input->post('edit_name');
 			$description=$this->input->post('edit_description');
 			$category=$this->input->post('edit_category');
-			$deadline=$this->input->post('edit_deadline');
+			$deadline = date("Y-m-d", strtotime($this->input->post('edit_deadline')));
 			$priority=$this->input->post('edit_priority');
 				
 			$userdata=array(
