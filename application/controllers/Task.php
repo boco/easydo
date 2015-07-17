@@ -13,11 +13,11 @@ class Task extends CI_Controller {
 	}
 
 	function verifyaddtask() {
-		$this->form_validation->set_rules('taskName', 'Task Name', 'trim|htmlspecialchars|stripslashes|required');
+		$this->form_validation->set_rules('taskName', 'Task Name', 'trim|htmlspecialchars|stripslashes|required|alpha_numeric_spaces');
 		$this->form_validation->set_rules('taskDescription', 'Description', 'trim|htmlspecialchars|stripslashes|required');
-		$this->form_validation->set_rules('taskCategory', 'Category', 'trim|htmlspecialchars|stripslashes|required');
+		$this->form_validation->set_rules('taskCategory', 'Category', 'trim|htmlspecialchars|stripslashes|required|alpha_numeric');
 		$this->form_validation->set_rules('taskDeadline', 'Deadline', 'trim|htmlspecialchars|stripslashes|required');
-		$this->form_validation->set_rules('taskPriority', 'Priority', 'trim|htmlspecialchars|stripslashes|required');
+		$this->form_validation->set_rules('taskPriority', 'Priority', 'trim|htmlspecialchars|stripslashes|required|numeric|greater_than_equal_to[0]|less_than_equal_to[5]');
 		if ($this->form_validation->run() == TRUE){
 			$user_id=$this->session->userdata('user_id');
 			$task_name=$this->input->post('taskName');
@@ -47,16 +47,6 @@ class Task extends CI_Controller {
             $this->load->view('task');
 		}
 	}
-
-	function check_name(){
-		$name = $this->input->post('task_name');
-		if(preg_match("/^[a-zA-Z0-9_\s]{4,40}$/",$name)){
-			return TRUE;
-		}else{
-			$this->form_validation->set_message('check_name', 'Invalid name!');
-			return FALSE;
-		}
-	}
 	
 	function check_deadline(){
 		$deadline = $this->input->post('deadline');
@@ -64,16 +54,6 @@ class Task extends CI_Controller {
 			return TRUE;
 		}else{
 			$this->form_validation->set_message('check_deadline', 'Invalid date!');
-			return FALSE;
-		}
-	}
-	
-	function check_priority(){
-		$priority = $this->input->post('priority');
-		if(preg_match("/^[1-5]$/",$priority)){
-			return TRUE;
-		}else{
-			$this->form_validation->set_message('check_priority', 'Invalid number!');
 			return FALSE;
 		}
 	}

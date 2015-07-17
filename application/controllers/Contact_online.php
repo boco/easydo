@@ -15,10 +15,10 @@ class Contact_online extends CI_Controller {
 	}
 
 	function verifycontact(){
-		$this->form_validation->set_rules('name', 'Name', 'trim|htmlspecialchars|stripslashes|required|callback_alpha_space_only');
-		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|required|callback_check_email');
+		$this->form_validation->set_rules('name', 'Name', 'trim|htmlspecialchars|stripslashes|required|alpha_numeric_spaces');
+		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|required|valid_emaill');
 		$this->form_validation->set_rules('message', 'Message', 'trim|htmlspecialchars|stripslashes|required');
-		$this->form_validation->set_rules('sum', 'Sum', 'trim|htmlspecialchars|stripslashes|required|callback_check_sum');
+		$this->form_validation->set_rules('sum', 'Sum', 'trim|htmlspecialchars|stripslashes|required|numeric|callback_check_sum');
 		if ($this->form_validation->run() == TRUE) {
 			//get the form data
 	        $name = $this->input->post('name');
@@ -49,16 +49,6 @@ class Contact_online extends CI_Controller {
 			$this->load->view('contact_online');
 		}
 	}
-	
-	function check_email(){
-		$email = $this->input->post('email');
-		if(preg_match("/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/",$email)){
-			return TRUE;
-		}else{
-			$this->form_validation->set_message('check_email', 'Invalid email!');
-			return FALSE;
-		}
-	}
 
 	function check_sum(){
 		$email = $this->input->post('sum');
@@ -68,16 +58,6 @@ class Contact_online extends CI_Controller {
 			$this->form_validation->set_message('check_sum', 'Wrong sum!');
 			return FALSE;
 		}
-	}
-
-	//custom validation function to accept only alphabets and space input
-    function alpha_space_only($str) {
-        if (!preg_match("/^[a-zA-Z ]+$/",$str)) {
-            $this->form_validation->set_message('alpha_space_only', 'The %s field must contain only alphabets and space');
-            return FALSE;
-        } else {
-            return TRUE;
-        }
-    }		
+	}		
 		
 }

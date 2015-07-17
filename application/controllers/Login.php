@@ -13,8 +13,8 @@ class Login extends CI_Controller {
 	}
 
 	function verifylogin(){
-		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|callback_check_email|required|callback_check_email_exist');
-		$this->form_validation->set_rules('password', 'Password', 'trim|htmlspecialchars|stripslashes|required|callback_check_password');
+		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|required|valid_email|callback_check_email_exist');
+		$this->form_validation->set_rules('password', 'Password', 'trim|htmlspecialchars|stripslashes|required|alpha_numeric|callback_check_password');
 		if ($this->form_validation->run() == TRUE){
 			$email=$this->input->post('email');
 			$this->session->set_userdata('email', $email);
@@ -23,16 +23,6 @@ class Login extends CI_Controller {
 		}
 		else{
 			$this->load->view('login');
-		}
-	}
-
-	function check_email(){
-		$email = $this->input->post('email');
-		if(preg_match("/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/",$email)){
-			return TRUE;
-		}else{
-			$this->form_validation->set_message('check_email', 'Invalid email!');
-			return FALSE;
 		}
 	}
 	

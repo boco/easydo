@@ -52,7 +52,7 @@
 
 			</ul>
 
-			<!--
+			
 			<div class="navbar-form navbar-left">
       			<div class="form-group">
                     <div class="input-group">
@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            -->
+            
 
 			<div class="nav navbar-nav navbar-right login hidden-xs">
 				<?php echo anchor('main/logout', 'Logout', 'class="btn btn-danger"'); ?>

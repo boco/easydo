@@ -54,7 +54,7 @@
 
 							<div class="col-sm-5">
 								<div class="well priority-look">
-									<h3>Available tasks:</h3>
+									<h3>Task details:</h3>
 
 									<!-- Slider -->
 									<div class="row-fluid">

@@ -11,10 +11,10 @@ class Contact_offline extends CI_Controller {
 	}
 
 	function verifycontact(){
-		$this->form_validation->set_rules('name', 'Name', 'trim|htmlspecialchars|stripslashes|required|callback_alpha_space_only');
-		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|required|callback_check_email');
+		$this->form_validation->set_rules('name', 'Name', 'trim|htmlspecialchars|stripslashes|required|alpha_numeric_spaces');
+		$this->form_validation->set_rules('email', 'Email', 'trim|htmlspecialchars|stripslashes|required|valid_email');
 		$this->form_validation->set_rules('message', 'Message', 'trim|htmlspecialchars|stripslashes|required');
-		$this->form_validation->set_rules('sum', 'Sum', 'trim|htmlspecialchars|stripslashes|required|callback_check_sum');
+		$this->form_validation->set_rules('sum', 'Sum', 'trim|htmlspecialchars|stripslashes|required|numeric|callback_check_sum');
 		if ($this->form_validation->run() == TRUE) {
 			//get the form data
 	        $name = $this->input->post('name');

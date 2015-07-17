@@ -132,6 +132,13 @@
 					</div>
 					-->
 
+					<div class="form-group">
+				        <div class="col-sm-10 col-sm-offset-1">
+				        	<?php echo $this->session->flashdata('profile_edit'); ?>
+				        	<?php echo $this->session->flashdata('settings_edit'); ?>
+				        </div>
+				    </div>
+
 					<div class="row">
 						<div class="col-md-6">
 							<div class="well what">
@@ -212,12 +219,22 @@
 
 									<div class="form-group">
 										<label for="userSettings">
-											Displayed number of daily tasks
+											Number of daily tasks displayed on the homepage
 										</label>
 										<input type="number" class="form-control" name="userSettings" value="<?php echo set_value('userSettings', $settings); ?>"/> 
 									</div>
 									<div class="form-group">
 								    	<span class="text-danger"><?php echo form_error('userSettings'); ?></span>
+						    		</div>
+
+						    		<div class="form-group">
+										<label for="overviewSettings">
+											Number of tasks per oage displayed in the Overview section
+										</label>
+										<input type="number" class="form-control" name="overviewSettings" value="<?php echo set_value('overviewSettings', $overview); ?>"/> 
+									</div>
+									<div class="form-group">
+								    	<span class="text-danger"><?php echo form_error('overviewSettings'); ?></span>
 						    		</div>
 
 									<!--
