@@ -29,6 +29,7 @@ class Overview extends CI_Controller {
 			$page=($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 			$data['tasks']=$this->tasks->getTasks_paging($this->session->userdata('user_id'),$config['per_page'], $page);
 			
+			$this->writeJs();
 			$this->load->view('overview',$data);
 		}else{
 			redirect('index','refresh');
@@ -52,6 +53,25 @@ class Overview extends CI_Controller {
 		$task_id = $this->input->post('edit_task');
 		$data['edit_task']=$this->tasks->getTaskById($task_id);
 		$this->load->view('edit_task',$data);
+	}
+
+	function writeJs(){
+		$sql=$this->tasks->getTasks($this->session->userdata('user_id'));
+		$posts = array();
+		$results=array();
+		foreach($sql as $rowo){
+			$taskname=$rowo->name;
+			$taskdeadline=$rowo->deadline;
+			$taskcompleted=$rowo->completed;
+
+			$posts[] = array('name'=> $taskname, 'deadline'=> $taskdeadline, 'completed'=> $taskcompleted);
+		}
+
+		$results['pages']=$posts;
+
+		$fp = fopen('results.json', 'w');
+		fwrite($fp, json_encode($results));
+		fclose($fp);	
 	}
 
 }

@@ -52,26 +52,19 @@
 
 			</ul>
 
-			
-			<div class="navbar-form navbar-left">
+			<div class="dropdown navbar-form navbar-left">
       			<div class="form-group">
                     <div class="input-group">
-                    	<label for="search" class="sr-only">Search</label>
-                        <input type="text" name="search" id="search" class="form-control" placeholder="Search" />
+                    	<label for="searchbar" class="sr-only">Search</label>
+                        <input type="text" name="searchbar" data-toggle="dropdown" id="searchbar" class="form-control" placeholder="Search"  aria-haspopup="true" aria-expanded="false"/>
                         <input id="hiddenurl" type="hidden" value="<?php echo base_url(); ?>">
                         <span class="input-group-addon green"><span class="glyphicon glyphicon-search"></span></span>
+                        <div id="tipue_drop_content" class="dropdown-menu sirina" aria-labelledby="searchbar">
+
+						</div>
                     </div>
                 </div>
-
-                <!--
-                <div id="results" class="well about about">
-					<p>labelaaa</p>
-				</div>
-				-->
-
-            
             </div>
-            
 
 			<div class="nav navbar-nav navbar-right login hidden-xs">
 				<?php echo anchor('main/logout', 'Logout', 'class="btn btn-danger"'); ?>

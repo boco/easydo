@@ -10,10 +10,9 @@ Class Tasks extends CI_Model {
 		
 		$query=$this->db->get();
 		
-		if ($query->num_rows==0){
+		if ($query->num_rows() == 0){
 			return FALSE;
-		}
-		else{
+		}else{
 			return $query->result();
 		}
 	}
@@ -143,7 +142,7 @@ Class Tasks extends CI_Model {
 		$this->db->from('tasks');
 		$this->db->where('user_id', $user_id);
 		$this->db->where('completed', 0);
-		$this->db->where('deadline >', $date);
+		$this->db->where('deadline >=', $date);
 
 		$query=$this->db->get();
 		

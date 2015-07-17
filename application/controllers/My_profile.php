@@ -41,6 +41,7 @@ class My_profile extends CI_Controller {
 			$data['pending']=$this->tasks->getNumPending($this->session->userdata('user_id'), date('Y-m-d'));
 			$data['failed']=$this->tasks->getNumMissed($this->session->userdata('user_id'), date('Y-m-d'));
 			
+			$this->writeJs();
 			$this->load->view('my_profile',$data);
 		}else{
 			redirect('index','refresh');
@@ -134,6 +135,25 @@ class My_profile extends CI_Controller {
 			$this->form_validation->set_message('check_email_available','Email already registered!');
 			return FALSE;
 		}
+	}
+
+	function writeJs(){
+		$sql=$this->tasks->getTasks($this->session->userdata('user_id'));
+		$posts = array();
+		$results=array();
+		foreach($sql as $rowo){
+			$taskname=$rowo->name;
+			$taskdeadline=$rowo->deadline;
+			$taskcompleted=$rowo->completed;
+
+			$posts[] = array('name'=> $taskname, 'deadline'=> $taskdeadline, 'completed'=> $taskcompleted);
+		}
+
+		$results['pages']=$posts;
+
+		$fp = fopen('results.json', 'w');
+		fwrite($fp, json_encode($results));
+		fclose($fp);	
 	}
 
 	
