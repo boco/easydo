@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 14. jul 2015 ob 15.05
+-- Čas nastanka: 19. jul 2015 ob 19.51
 -- Različica strežnika: 5.6.11
 -- Različica PHP: 5.5.3
 
@@ -31,7 +31,7 @@ USE `easydo`;
 CREATE TABLE IF NOT EXISTS `tasks` (
   `task_id` int(8) NOT NULL AUTO_INCREMENT,
   `user_id` int(6) NOT NULL,
-  `name` int(40) NOT NULL,
+  `name` varchar(40) NOT NULL,
   `description` text NOT NULL,
   `category` varchar(20) NOT NULL,
   `created` date NOT NULL,
@@ -54,6 +54,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(20) NOT NULL,
   `registered` date NOT NULL,
   `settings` tinyint(4) NOT NULL,
+  `overview` tinyint(4) NOT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
